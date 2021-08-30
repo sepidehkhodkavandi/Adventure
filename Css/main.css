@@ -1,20 +1,19 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-// -------font-face-------
 @font-face {
   font-family: boldfont;
   src: url("/Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
   font-weight: 700;
 }
+
 @font-face {
   font-family: regular;
   src: url("/Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
 }
-// ------hero section------
-p{
-  font-size: 25px;
-}
+
+/*# sourceMappingURL=main.css.map */
