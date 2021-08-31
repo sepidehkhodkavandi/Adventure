@@ -5,6 +5,12 @@
           box-sizing: border-box;
 }
 
+.df {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @font-face {
   font-family: boldfont;
   src: url("/Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
@@ -16,4 +22,171 @@
   src: url("/Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
 }
 
+p {
+  font-size: 25px;
+}
+
+/********************************************helia-main2**********************************************/
+/*
+.main-two-1{
+  font-family: boldfont;
+  margin-top: 80px;
+  padding: 0 80px 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(34, 34, 34);
+}
+
+.afghan{
+  display: flex;
+  margin: 48px 0px
+}
+.afghan-title{  
+  width:50%;
+  h1{
+      font-size: 32px;
+      line-height: 36px;
+      font-weight: 800;
+
+
+  }
+}
+
+.afghan-text{
+  font-size: 20px ;
+  line-height: 28px ;
+  width: 50%;
+}
+*/
+/*****************Live anywhere- Helia********************/
+.main-two-2 {
+  overflow: hidden;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.liveAnywhere {
+  padding-right: 80px;
+  padding-left: 80px;
+  max-width: 1760px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+.liveAnywhere h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #222222;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  padding: 7px;
+}
+
+.liveAnywhere div {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.m-2-2-pic {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 25%;
+}
+
+.m-2-2-pic a {
+  padding: 7px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.m-2-2-pic a img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.m-2-2-pic a p {
+  font-family: 'Roboto', sans-serif;
+  color: #222222;
+  font-size: 20px;
+  padding-top: 8px;
+}
+
+/********try hosting - Helia*********/
+.main-two-3 {
+  margin-top: 40px;
+  width: 100%;
+  height: 480px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-two-3 .m-2-3-container {
+  padding-right: 80px;
+  padding-left: 80px;
+  max-width: 1760px;
+  height: auto;
+  height: 480px;
+  cursor: pointer !important;
+}
+
+.tryHosting {
+  width: 100%;
+  background-image: url(../Images/tryHosting-desktop.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 480px;
+  border-radius: 15px;
+}
+
+.tryHosting a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.m-2-3-text {
+  padding-left: 80px;
+  padding-right: 80px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 130px;
+  max-width: 544px;
+}
+
+.m-2-3-text h1 {
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.m-2-3-text p {
+  padding-top: 12px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.m-2-3-text .lm {
+  margin-top: 40px;
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  padding: 14px 24px;
+  display: inline-block;
+  border-radius: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 /*# sourceMappingURL=main.css.map */
