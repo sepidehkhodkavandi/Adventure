@@ -1,30 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .df {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
+  display: flex; }
 
 @font-face {
   font-family: boldfont;
   src: url("/Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
-  font-weight: 700;
-}
-
+  font-weight: 700; }
 @font-face {
   font-family: regular;
-  src: url("/Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
-}
-
+  src: url("/Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2"); }
 p {
-  font-size: 25px;
-}
+  font-size: 25px; }
 
 /********************************************helia-main2**********************************************/
 /*
@@ -61,79 +51,56 @@ p {
 */
 /*****************Live anywhere- Helia********************/
 .main-two-2 {
-  overflow: hidden;
   margin-top: 40px;
-  width: 100%;
-}
+  width: 100%; }
 
 .liveAnywhere {
   padding-right: 80px;
   padding-left: 80px;
   max-width: 1760px;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  overflow: hidden;
-}
-
-.liveAnywhere h1 {
-  font-family: 'Roboto', sans-serif;
-  color: #222222;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 36px;
-  padding: 7px;
-}
-
-.liveAnywhere div {
-  width: 100%;
-  margin-top: 10px;
-}
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden; }
+  .liveAnywhere h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    padding: 7px; }
+  .liveAnywhere div {
+    width: 100%;
+    margin-top: 10px; }
 
 .m-2-2-pic {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 25%;
-}
-
-.m-2-2-pic a {
-  padding: 7px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.m-2-2-pic a img {
-  border-radius: 10px;
-  width: 100%;
-}
-
-.m-2-2-pic a p {
-  font-family: 'Roboto', sans-serif;
-  color: #222222;
-  font-size: 20px;
-  padding-top: 8px;
-}
+  flex-direction: column;
+  max-width: 25%; }
+  .m-2-2-pic a {
+    padding: 7px;
+    cursor: pointer;
+    text-decoration: none; }
+    .m-2-2-pic a img {
+      border-radius: 10px;
+      width: 100%; }
+    .m-2-2-pic a p {
+      font-family: 'Roboto', sans-serif;
+      color: #222222;
+      font-size: 20px;
+      padding-top: 8px; }
 
 /********try hosting - Helia*********/
 .main-two-3 {
   margin-top: 40px;
   width: 100%;
   height: 480px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.main-two-3 .m-2-3-container {
-  padding-right: 80px;
-  padding-left: 80px;
-  max-width: 1760px;
-  height: auto;
-  height: 480px;
-  cursor: pointer !important;
-}
+  font-family: 'Roboto', sans-serif; }
+  .main-two-3 .m-2-3-container {
+    padding-right: 80px;
+    padding-left: 80px;
+    max-width: 1760px;
+    height: auto;
+    height: 480px;
+    cursor: pointer !important; }
 
 .tryHosting {
   width: 100%;
@@ -142,51 +109,106 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   height: 480px;
-  border-radius: 15px;
-}
-
-.tryHosting a {
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-}
+  border-radius: 15px; }
+  .tryHosting a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff; }
 
 .m-2-3-text {
   padding-left: 80px;
   padding-right: 80px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-top: 130px;
-  max-width: 544px;
-}
+  max-width: 544px; }
+  .m-2-3-text h1 {
+    font-size: 48px;
+    line-height: 52px;
+    font-weight: 600;
+    letter-spacing: 2px; }
+  .m-2-3-text p {
+    padding-top: 12px;
+    font-size: 18px;
+    line-height: 24px; }
+  .m-2-3-text .lm {
+    margin-top: 40px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    padding: 14px 24px;
+    display: inline-block;
+    border-radius: 10px;
+    width: max-content; }
 
-.m-2-3-text h1 {
-  font-size: 48px;
-  line-height: 52px;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
+/**********Discover things to do - Helia**************/
+.main-two-4 {
+  margin-top: 60px;
+  width: 100%; }
 
-.m-2-3-text p {
-  padding-top: 12px;
-  font-size: 18px;
-  line-height: 24px;
-}
+.discoverThings {
+  padding-right: 80px;
+  padding-left: 80px;
+  max-width: 1760px;
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden; }
+  .discoverThings h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    padding: 7px; }
+  .discoverThings div {
+    width: 100%;
+    margin-top: 10px; }
 
-.m-2-3-text .lm {
-  margin-top: 40px;
-  text-decoration: none;
-  color: #000;
-  background-color: #fff;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  padding: 14px 24px;
-  display: inline-block;
-  border-radius: 10px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
+.m-2-4-pic {
+  flex-direction: column;
+  max-width: 33%; }
+  .m-2-4-pic a {
+    padding: 7px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative; }
+    .m-2-4-pic a img {
+      border-radius: 10px;
+      width: 100%; }
+    .m-2-4-pic a h5 {
+      font-family: 'Roboto', sans-serif;
+      color: #222222;
+      font-size: 20px;
+      padding-top: 8px; }
+    .m-2-4-pic a p {
+      font-family: 'Roboto', sans-serif;
+      color: #222222;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400; }
+    .m-2-4-pic a .featured {
+      left: 16px;
+      position: absolute;
+      top: 16px;
+      background-color: #fff;
+      z-index: 33;
+      padding: 4px 6px;
+      width: auto;
+      border-radius: 4px;
+      text-align: center; }
+      .m-2-4-pic a .featured p {
+        font-family: 'Roboto', sans-seri;
+        font-size: 10px;
+        line-height: 12px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: #000; }
+
+.pl0 {
+  padding-left: 0px; }
+
+.pr0 {
+  padding-right: 0px; }
+
 /*# sourceMappingURL=main.css.map */

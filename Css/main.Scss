@@ -67,7 +67,7 @@ p{
 /*****************Live anywhere- Helia********************/
 
 .main-two-2{
-  overflow: hidden;
+
   margin-top: 40px ;
   width: 100%;
 }
@@ -176,6 +176,88 @@ p{
     padding: 14px 24px;
     display: inline-block;
     border-radius: 10px;
-    width: fit-content;
+    width: max-content;
   }
+}
+/**********Discover things to do - Helia**************/
+.main-two-4{
+
+  margin-top: 60px ;
+  width: 100%;
+}
+.discoverThings{
+  padding-right: 80px;
+  padding-left: 80px ;
+  max-width: 1760px;
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden;
+  h1{
+    font-family: 'Roboto', sans-serif;
+    color:  #222222;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    padding: 7px;
+  }
+  div{
+    width: 100%;
+    margin-top:10px
+  }
+}
+
+.m-2-4-pic{
+flex-direction: column;
+max-width: 33%;
+a{
+padding: 7px;
+cursor: pointer;
+text-decoration: none;
+position: relative;
+  img{
+      border-radius: 10px;
+      width: 100%;
+  }
+
+  h5{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+    padding-top: 8px;
+    }
+    p{
+      font-family: 'Roboto', sans-serif;
+      color: rgb(34, 34, 34);
+      font-size: 14px ;
+      line-height: 18px ;
+      font-weight: 400 ;
+    }
+    .featured{
+      left: 16px;
+      position: absolute;
+      top: 16px;
+      background-color: #fff;
+      z-index: 33;
+      padding: 4px 6px;
+      width: auto;
+      border-radius: 4px;
+      text-align: center;
+      p{
+        font-family: 'Roboto', sans-seri;
+        font-size: 10px;
+        line-height: 12px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: #000;
+      }
+    }
+}
+
+}
+
+.pl0{
+  padding-left: 0px ;
+}
+.pr0{
+  padding-right: 0px ;
 }
