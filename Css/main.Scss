@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +12,12 @@
 // -------font-face-------
 @font-face {
   font-family: boldfont;
-  src: url("/Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
+  src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
   font-weight: 700;
 }
 @font-face {
   font-family: regular;
-  src: url("/Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
+  src: url("../Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
 }
 // ------hero section------
 
@@ -28,7 +29,7 @@
 .hero {
   width: 100%;
   height: 100%;
-  background-image: url(/Images/Hero-2560.jpg);
+  background-image: url(../Images/Hero-2560.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -70,7 +71,7 @@
 }
 .clink {
   color: #fff;
-  font-family: "Roboto";
+  font-family: regular;
   padding-right: 16px;
   padding-left: 16px;
   padding-top: 10px;
@@ -507,42 +508,42 @@
 }
 .one {
   .citypic {
-    background-image: url("/Images/berlin.jpg");
+    background-image: url("../Images/berlin.jpg");
   }
 }
 .two {
   .citypic {
-    background-image: url("/Images/Hamburg.jpg");
+    background-image: url("../Images/Hamburg.jpg");
   }
 }
 .three {
   .citypic {
-    background-image: url("/Images/Cologne.jpg");
+    background-image: url("../Images/Cologne.jpg");
   }
 }
 .four {
   .citypic{
-    background-image: url("/Images/Leipzig.jpg");
+    background-image: url("../Images/Leipzig.jpg");
   }
 }
 .five {
   .citypic{
-    background-image: url("/Images/D.webp");
+    background-image: url("../Images/D.webp");
   }
 }
 .six {
   .citypic{
-    background-image: url("/Images/Dresden.jpg");
+    background-image: url("../Images/Dresden.jpg");
   }
 }
 .seven {
   .citypic{
-    background-image: url("/Images/Nuremberg.jpg");
+    background-image: url("../Images/Nuremberg.jpg");
   }
 }
 .eight {
   .citypic{
-    background-image: url("/Images/Hanover.jpg");
+    background-image: url("../Images/Hanover.jpg");
   }
 }
 
@@ -592,3 +593,241 @@
 
 
 // -------------------------------end main one sepideh
+
+
+/********************************************helia-main2**********************************************/
+
+/*
+.main-two-1{
+  font-family: boldfont;
+  margin-top: 80px;
+  padding: 0 80px 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(34, 34, 34);
+}
+
+.afghan{
+  display: flex;
+  margin: 48px 0px
+}
+.afghan-title{  
+  width:50%;
+  h1{
+      font-size: 32px;
+      line-height: 36px;
+      font-weight: 800;
+
+
+  }
+}
+
+.afghan-text{
+  font-size: 20px ;
+  line-height: 28px ;
+  width: 50%;
+}
+*/
+
+
+
+/*****************Live anywhere- Helia********************/
+
+.main-two-2{
+
+  margin-top: 40px ;
+  width: 100%;
+}
+  .liveAnywhere{
+    padding-right: 80px;
+    padding-left: 80px ;
+    max-width: 1760px;
+    align-content: center;
+    justify-content: space-between;
+    overflow: hidden;
+    h1{
+      font-family:boldfont;
+      color:  #222222;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 36px;
+      padding: 7px;
+    }
+    div{
+      width: 100%;
+      margin-top:10px
+    }
+  }
+
+.m-2-2-pic{
+  flex-direction: column;
+  max-width: 25%;
+  a{
+  padding: 7px;
+  cursor: pointer;
+  text-decoration: none;
+    img{
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    p{
+      font-family: regular;
+      color: rgb(34, 34, 34);
+      font-size: 20px;
+      padding-top: 8px;
+      }
+  }
+  
+}
+
+
+/********try hosting - Helia*********/
+.main-two-3{
+  margin-top: 40px;
+  width: 100%;
+  height: 480px;
+  font-family:regular;
+  .m-2-3-container{
+    padding-right: 80px;
+    padding-left: 80px ;
+    max-width: 1760px;
+    height: auto;
+    height: 480px;
+    cursor: pointer !important;
+    
+  }
+  
+
+}
+.tryHosting{
+  width: 100%;
+  background-image: url(../Images/tryHosting-desktop.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 480px;
+  border-radius: 15px;
+  a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.m-2-3-text{
+  padding-left: 80px ;
+  padding-right: 80px ;
+  flex-direction: column;
+  padding-top: 130px ;
+  max-width: 544px;
+  h1{
+   
+    font-size: 48px ;
+    line-height: 52px ;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  p{
+   
+    padding-top: 12px;
+    font-size: 18px ;
+    line-height: 24px ;
+  }
+  .lm{
+    margin-top: 40px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    padding: 14px 24px;
+    display: inline-block;
+    border-radius: 10px;
+    width: max-content;
+  }
+}
+/**********Discover things to do - Helia**************/
+.main-two-4{
+  margin-bottom: 30px;
+  margin-top: 60px ;
+  width: 100%;
+}
+.discoverThings{
+  padding-right: 80px;
+  padding-left: 80px ;
+  max-width: 1760px;
+  align-content: center;
+  justify-content: space-between;
+  overflow: hidden;
+  h1{
+    font-family: boldfont;
+    color:  #222222;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    padding: 7px;
+  }
+  div{
+    width: 100%;
+    margin-top:10px
+  }
+}
+
+.m-2-4-pic{
+flex-direction: column;
+max-width: 33%;
+a{
+padding: 7px;
+cursor: pointer;
+text-decoration: none;
+position: relative;
+  img{
+      border-radius: 10px;
+      width: 100%;
+  }
+
+  h5{
+    font-family: regular;
+    color: rgb(34, 34, 34);
+    font-size: 20px;
+    padding-top: 8px;
+    }
+    p{
+      font-family: regular;
+      color: rgb(34, 34, 34);
+      font-size: 14px ;
+      line-height: 18px ;
+      font-weight: 400 ;
+    }
+    .featured{
+      left: 16px;
+      position: absolute;
+      top: 16px;
+      background-color: #fff;
+      z-index: 33;
+      padding: 4px 6px;
+      width: auto;
+      border-radius: 4px;
+      text-align: center;
+      p{
+        font-family: regular;
+        font-size: 10px;
+        line-height: 12px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: #000;
+      }
+    }
+}
+
+}
+
+.pl0{
+  padding-left: 0px ;
+}
+.pr0{
+  padding-right: 0px ;
+}
+
+//end main two- helia
