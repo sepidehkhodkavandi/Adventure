@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: regular;
 }
 
 .df {
@@ -20,8 +21,30 @@
   src: url("../Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
 }
 
-// ------hero section------
 
+
+//------------------------
+$smallDvice:743px;
+$mediumDevice:‏949px;
+$largeDevice:1127px;
+
+
+@mixin mediumDevice{
+  @media (max-width: #{$mediumDvice}){
+      @content;
+  }
+}
+
+@mixin smallDevice{
+    @media (max-width: #{$smallDvice}){
+        @content;
+  }}
+
+@mixin largeDevice{
+      @media (max-width: #{$largeDvice}){
+          @content;
+  }}
+// ------hero section------
 .hero-section {
   //width: 100vw;
   height: 558px;
