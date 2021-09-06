@@ -24,26 +24,37 @@
 
 
 //------------------------
-$smallDvice:743px;
-$mediumDevice:‏949px;
+$smallDevice:743px;
+
 $largeDevice:1127px;
 
 
+
+
+
+
+
+
+
+
+
+
+$mediumDevice:949px;
 @mixin mediumDevice{
-  @media (max-width: #{$mediumDvice}){
+  @media (max-width: $mediumDevice){
       @content;
-  }
-}
+}}
 
 @mixin smallDevice{
-    @media (max-width: #{$smallDvice}){
+    @media (max-width: $smallDevice){
         @content;
   }}
 
 @mixin largeDevice{
-      @media (max-width: #{$largeDvice}){
+      @media (max-width: $largeDevice){
           @content;
   }}
+  
 // ------hero section------
 .hero-section {
   //width: 100vw;
@@ -69,12 +80,19 @@ $largeDevice:1127px;
     width: 100%;
     position: fixed;
     z-index: 10;
+    //background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0) );
   }
+}
+
+.activemenu{
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px !important;
 }
 
 .header-container {
   height: 80px;
 }
+
 
 .header-menu::before {
   background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
@@ -147,7 +165,10 @@ $largeDevice:1127px;
 }
 
 .center {
-  margin-left: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
 }
 
 .places::before {
@@ -193,6 +214,10 @@ $largeDevice:1127px;
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
+.places.placesBlack::before, .onlineexp.onlineexpBlack::before, .exp.expBlack::before{
+  background-color: #000;
+}
+
 
 .exp::before {
   display: none;
@@ -290,6 +315,20 @@ $largeDevice:1127px;
   z-index: 11;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15), 0px 3px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: all .2s;
+}
+.whiteActive{
+  height: 46px;
+  width: 300px;
+  margin-top: 16px;
+  border: 1px solid #DDDDDD ;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 4px 12px rgba(0, 0, 0, 0.05) ;
+  color: #222222 ;
+  cursor: pointer;
+  transition: all .2s;
+}
+.whiteActive:hover{
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px !important;
 }
 
 .add-dates {
@@ -312,7 +351,6 @@ $largeDevice:1127px;
   text-align: left;
   flex: 1;
 }
-
 .check-out-container {
   color: #222222;
   text-align: left;
@@ -372,6 +410,9 @@ $largeDevice:1127px;
   background-color: #ebebeb;
   border-radius: 32px;
 }
+.guest-container.removeHover:hover{
+  background-color: unset;
+}
 
 .guest-container {
   align-items: center;
@@ -422,7 +463,17 @@ $largeDevice:1127px;
   border: none;
   background-color: transparent;
 }
-
+.centerheader{
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  justify-content: center;
+  width: 850px;
+  margin-left: 150px;
+}
+.headermenu.active::before{
+  background-image: unset;
+}
 .headermenu::before {
   background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
   content: "";
@@ -436,6 +487,19 @@ $largeDevice:1127px;
   -moz-transition: 150ms opacity ease;
   transition: 150ms opacity ease;
   opacity: 0.4;
+}
+.idnafter{
+background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)) !important;
+content: "" !important;
+height: 140% !important;
+left: 0px !important;
+opacity: 0 !important;
+pointer-events: none !important;
+position: absolute !important;
+top: 0px !important;
+width: 100% !important;
+z-index: 0 !important;
+transition: opacity 150ms ease 0s !important;
 }
 
 .hero-question {
@@ -512,6 +576,14 @@ $largeDevice:1127px;
   background: rgb(255, 56, 92);
 
 }
+.searchBtnActive{
+  position: absolute;
+  right: 5px;
+  display: flex;
+  height: 32px;
+  width: 32px;
+  justify-content: center;
+}
 
 .search-button::before {
   background: -webkit-linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%) !important;
@@ -531,12 +603,26 @@ $largeDevice:1127px;
   opacity: 0 !important;
   border-radius: 24px;
 }
-
+.whitemenuText{
+  align-self: center;
+  margin-left: 20px;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  font-weight: 600 !important;
+  display: none;
+}
 .searchsvg {
   margin-left: 16px;
   margin-top: 16px;
   z-index: 200;
   position: absolute;
+}
+.searchsvgActive{
+  height: 12px;
+  width: 12px;
+  margin:auto;
+  margin-top: 8px;
+
 }
 
 .search-button:hover::before {
@@ -865,6 +951,9 @@ $largeDevice:1127px;
     font-weight: 700;
     line-height: 36px;
     padding: 7px;
+    @include mediumDevice(){
+      background-color: #D70466;
+    }
   }
 
   div {
