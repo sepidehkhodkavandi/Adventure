@@ -92,6 +92,7 @@ checkIn.addEventListener('click', calenderF)
 
 
 let country = document.querySelectorAll(".country")
+
 let btn = document.querySelectorAll(".btn")
 let box = document.querySelector(".country__items")
 btn.forEach((item, index) => {

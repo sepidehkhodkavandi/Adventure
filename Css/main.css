@@ -1,5 +1,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: regular; }
 
+.dn { display: none; }
+
 .df { display: flex; }
 
 a { text-decoration: none; }
