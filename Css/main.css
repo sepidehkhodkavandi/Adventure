@@ -2,6 +2,8 @@
 
 .df { display: flex; }
 
+a { text-decoration: none; }
+
 @font-face { font-family: boldfont; src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2"); font-weight: 700; }
 
 @font-face { font-family: regular; src: url("../Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2"); }
