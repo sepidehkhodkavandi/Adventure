@@ -40,21 +40,25 @@ $largeDevice:1127px;
 
 
 $mediumDevice:949px;
-@mixin mediumDevice{
-  @media (max-width: $mediumDevice){
-      @content;
-}}
 
-@mixin smallDevice{
-    @media (max-width: $smallDevice){
-        @content;
-  }}
+@mixin mediumDevice {
+  @media (max-width: $mediumDevice) {
+    @content;
+  }
+}
 
-@mixin largeDevice{
-      @media (max-width: $largeDevice){
-          @content;
-  }}
-  
+@mixin smallDevice {
+  @media (max-width: $smallDevice) {
+    @content;
+  }
+}
+
+@mixin largeDevice {
+  @media (max-width: $largeDevice) {
+    @content;
+  }
+}
+
 // ------hero section------
 .hero-section {
   //width: 100vw;
@@ -84,7 +88,7 @@ $mediumDevice:949px;
   }
 }
 
-.activemenu{
+.activemenu {
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px !important;
 }
@@ -214,7 +218,10 @@ $mediumDevice:949px;
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
-.places.placesBlack::before, .onlineexp.onlineexpBlack::before, .exp.expBlack::before{
+
+.places.placesBlack::before,
+.onlineexp.onlineexpBlack::before,
+.exp.expBlack::before {
   background-color: #000;
 }
 
@@ -317,17 +324,19 @@ $mediumDevice:949px;
   position: relative;
   transition: all .2s;
 }
-.whiteActive{
+
+.whiteActive {
   height: 46px;
   width: 300px;
   margin-top: 16px;
-  border: 1px solid #DDDDDD ;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 4px 12px rgba(0, 0, 0, 0.05) ;
-  color: #222222 ;
+  border: 1px solid #DDDDDD;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 4px 12px rgba(0, 0, 0, 0.05);
+  color: #222222;
   cursor: pointer;
   transition: all .2s;
 }
-.whiteActive:hover{
+
+.whiteActive:hover {
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px !important;
 }
 
@@ -351,6 +360,7 @@ $mediumDevice:949px;
   text-align: left;
   flex: 1;
 }
+
 .check-out-container {
   color: #222222;
   text-align: left;
@@ -410,7 +420,8 @@ $mediumDevice:949px;
   background-color: #ebebeb;
   border-radius: 32px;
 }
-.guest-container.removeHover:hover{
+
+.guest-container.removeHover:hover {
   background-color: unset;
 }
 
@@ -463,7 +474,8 @@ $mediumDevice:949px;
   border: none;
   background-color: transparent;
 }
-.centerheader{
+
+.centerheader {
   display: flex;
   flex-direction: column;
   align-self: start;
@@ -471,9 +483,11 @@ $mediumDevice:949px;
   width: 850px;
   margin-left: 150px;
 }
-.headermenu.active::before{
+
+.headermenu.active::before {
   background-image: unset;
 }
+
 .headermenu::before {
   background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
   content: "";
@@ -488,18 +502,19 @@ $mediumDevice:949px;
   transition: 150ms opacity ease;
   opacity: 0.4;
 }
-.idnafter{
-background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)) !important;
-content: "" !important;
-height: 140% !important;
-left: 0px !important;
-opacity: 0 !important;
-pointer-events: none !important;
-position: absolute !important;
-top: 0px !important;
-width: 100% !important;
-z-index: 0 !important;
-transition: opacity 150ms ease 0s !important;
+
+.idnafter {
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)) !important;
+  content: "" !important;
+  height: 140% !important;
+  left: 0px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 0px !important;
+  width: 100% !important;
+  z-index: 0 !important;
+  transition: opacity 150ms ease 0s !important;
 }
 
 .hero-question {
@@ -576,7 +591,8 @@ transition: opacity 150ms ease 0s !important;
   background: rgb(255, 56, 92);
 
 }
-.searchBtnActive{
+
+.searchBtnActive {
   position: absolute;
   right: 5px;
   display: flex;
@@ -603,7 +619,8 @@ transition: opacity 150ms ease 0s !important;
   opacity: 0 !important;
   border-radius: 24px;
 }
-.whitemenuText{
+
+.whitemenuText {
   align-self: center;
   margin-left: 20px;
   font-size: 14px !important;
@@ -611,16 +628,18 @@ transition: opacity 150ms ease 0s !important;
   font-weight: 600 !important;
   display: none;
 }
+
 .searchsvg {
   margin-left: 16px;
   margin-top: 16px;
   z-index: 200;
   position: absolute;
 }
-.searchsvgActive{
+
+.searchsvgActive {
   height: 12px;
   width: 12px;
-  margin:auto;
+  margin: auto;
   margin-top: 8px;
 
 }
@@ -951,7 +970,8 @@ transition: opacity 150ms ease 0s !important;
     font-weight: 700;
     line-height: 36px;
     padding: 7px;
-    @include mediumDevice(){
+
+    @include mediumDevice() {
       background-color: #D70466;
     }
   }
@@ -1026,7 +1046,90 @@ transition: opacity 150ms ease 0s !important;
 
 //end main two- helia
 
+//start-inspiration//samira--------------------------------------
 
+.container__inspiration {
+  font-family: 'regular';
+  padding: 0 5em;
+
+
+  h1 {
+    padding: 1.1em 0;
+    font-weight: 700;
+  }
+
+  .distination__items {
+    @include largeDevice {
+      overflow: auto;
+      white-space: nowrap;
+    }
+
+  }
+
+  button {
+    font-family: 'regular';
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    border: medium none;
+    margin: 1em 0;
+    background: transparent none repeat scroll 0% 0%;
+    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, transform 0.1s ease 0s, transform 0.1s ease 0s;
+    outline: currentcolor none medium;
+    padding-right: 1.5em;
+    height: 40px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #dddddd;
+    }
+
+  }
+}
+
+.container__inspiration .country {
+  flex-wrap: wrap;
+  padding-top: 1.5em;
+  border-top: 1px solid rgb(221, 221, 221);
+
+
+  a {
+    color: rgb(34, 34, 34);
+  }
+
+  .country__items {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+
+
+    @include largeDevice {
+      flex-basis: 33.3%;
+      width: calc(100% + 16px) !important;
+    }
+
+    @include smallDevice {
+      flex-basis: 50%;
+
+    }
+  }
+
+  .cites {
+    flex-direction: column;
+    margin-bottom: 2em;
+  }
+
+  a:nth-child(2) {
+    color: rgb(113, 113, 113);
+    padding-top: 2px;
+    font-size: 85%;
+  }
+
+
+}
+
+
+//end-inspiration//samira---------------------------------------
 
 //footer Samira
 .footer {
