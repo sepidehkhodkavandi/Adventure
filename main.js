@@ -213,7 +213,6 @@ fsvg.forEach((svg, index) => {
    svg.addEventListener("click", () => {   
     svg.classList.remove("grayColor");
     svg.classList.add("redColor");
-  
      
     fsvg.forEach((item, i) =>{
 

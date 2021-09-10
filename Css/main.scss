@@ -113,21 +113,7 @@ $xxxsmallDevice :375px;
    // height: max(550px, min(85vh, calc(var(--lg-height, 9) / var(--lg-width, 16) * 100vw))) !important;
     height: Max(550px, Min(85vh, (0.56 * 100vw)));
   }
-  // @include mediumDevice(){
-  //   height: 743px;
-  // }
-  // @include smallDevice(){
-  //   height: 967px;
-  // }
-  // @include xsmallDevice(){
-  //   height: 765px;
-  // }
-  // @include xxsmallDevice(){
-  //   height: 635px;
-  // }
-  // @include xxxsmallDevice(){
-  //   height: 488px;
-  // }
+
 }
 
 .hero {
