@@ -1,8 +1,20 @@
 // fixed header - Helia
 window.onscroll = function() {scrollFunction()};
 const header = document.querySelector('.headermenu');
+$(".ssize-header-container").removeClass("ssize-back-color");
+    $(".small-size-header").css("background-color" , "white");
 function scrollFunction() {
+// --added by sepideh---
+  if (document.body.scrollTop == 0){
+    $(".ssize-header-container").removeClass("ssize-back-color");
+    $(".small-size-header").css("background-color" , "white");
+
+  }
+
   if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    $(".ssize-header-container").addClass("ssize-back-color");
+    $(".small-size-header").css("background-color" , "rgb(245, 244, 244)");
+    //--added by sepideh-----------
     header.style.backgroundColor= "#fff";
     header.style.boxShadow = "rgba(0, 0, 0, 0.08) 0px 1px 12px";
     header.classList.add('active');
@@ -80,6 +92,24 @@ function scrollFunction() {
     console.log('birang shod');
   }
 }
+
+
+// --------------------------------------------sepideh---------------
+//this code is added to check if the user is scrolling up or down
+// we need to hide the footer in small devices while scrolling up and then show it while the user scrolls down
+let lastScrollTop = 0;
+
+document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+  let st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  if (st > lastScrollTop){
+    $(".small-size-footer").css("opacity" , "0");
+  } else {
+    $(".small-size-footer").css("opacity" , "1");
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+// --------------------------------------------sepideh---------------
+
 
 // ------------------------------------------samira----------------------
 const checkIn = document.querySelector('.check-in-container')
@@ -167,9 +197,35 @@ function getDay(date) { // get day number from 0 (monday) to 6 (sunday)
   return day - 1;
 }
 
-createCalendar(calendar, 2012, 9);
+//createCalendar(calendar, 2012, 9);
 
 
 // ------------------------------------------samira----------------------
 
 
+// --------------Added for the footer in mobile devices--------------
+let fsvg = document.querySelectorAll(".small-footer-svg");
+  fsvg[0].classList.add("redColor");
+  fsvg[1].classList.add("grayColor");
+  fsvg[2].classList.add("grayColor");
+
+fsvg.forEach((svg, index) => {
+   svg.addEventListener("click", () => {   
+    svg.classList.remove("grayColor");
+    svg.classList.add("redColor");
+  
+     
+    fsvg.forEach((item, i) =>{
+
+      if (i != index && item.classList.contains("redColor"))
+      {item.classList.remove("redColor"); 
+        item.classList.add("grayColor");
+      }
+         
+      });})
+    
+
+ });
+
+
+// ----sepideh : this is added for small devices only----
