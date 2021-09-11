@@ -93,6 +93,29 @@ function scrollFunction() {
   }
 }
 
+// live anywhere
+
+
+const livePic = document.querySelector(".live-pic");
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+
+nextBtn.addEventListener('click',()=>{
+
+ livePic.scrollLeft = 350;
+ nextBtn.style.display = "none";
+ prevBtn.style.display = "block";
+})
+
+prevBtn.addEventListener('click',()=>{
+  livePic.scrollLeft = -350;
+  prevBtn.style.display = "none";
+  nextBtn.style.display = "block ";
+})
+
+
+
+
 
 // --------------------------------------------sepideh---------------
 //this code is added to check if the user is scrolling up or down
@@ -109,6 +132,7 @@ document.addEventListener("scroll", function(){ // or window.addEventListener("s
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 // --------------------------------------------sepideh---------------
+
 
 
 // ------------------------------------------samira----------------------
