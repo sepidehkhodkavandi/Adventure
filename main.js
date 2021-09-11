@@ -81,6 +81,30 @@ function scrollFunction() {
   }
 }
 
+// live anywhere
+
+
+const livePic = document.querySelector(".live-pic");
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+
+nextBtn.addEventListener('click',()=>{
+
+ livePic.scrollLeft = 350;
+ nextBtn.style.display = "none";
+ prevBtn.style.display = "block";
+})
+
+prevBtn.addEventListener('click',()=>{
+  livePic.scrollLeft = -350;
+  prevBtn.style.display = "none";
+  nextBtn.style.display = "block ";
+})
+
+
+
+
+
 // ------------------------------------------samira----------------------
 const checkIn = document.querySelector('.check-in-container')
 
@@ -167,7 +191,7 @@ function getDay(date) { // get day number from 0 (monday) to 6 (sunday)
   return day - 1;
 }
 
-createCalendar(calendar, 2012, 9);
+//createCalendar(calendar, 2012, 9);
 
 
 // ------------------------------------------samira----------------------
