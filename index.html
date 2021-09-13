@@ -74,6 +74,20 @@
                     onblur="this.placeholder = 'Where are you going?'" /></input>
                 </div>
               </div>
+
+              <!-- ------location-input-menu------ -->
+              <div class="location-input-menu">
+                <div class="title-input-menu">
+                  <p>Go anywhere, anytime</p>
+                </div>
+                <div class="purple-flexible-container">
+                  <p class="purple-text">I'm flexible</p>
+                  <div class="video">
+                    <video autoplay="" crossorigin="anonymous" playsinline="" poster="https://a0.muscache.com/pictures/04c0a34f-9880-48b7-a69c-49011f602a35.jpg" preload="auto" width="28" height="28"><source src="https://a0.muscache.com/v/3d/fc/3dfc1c47-7bfb-5a3b-a969-ed42ae03c901/3dfc1c477bfb5a3ba969ed42ae03c901_200k_1.mp4?impolicy=low_quality" type="video/mp4"></video>
+                  </div>
+                </div>
+      
+              </div>
               <!-- ------------------------------------ -->
               <div class="check-in-container df onhover">
                 <div class="check in">
@@ -92,7 +106,7 @@
               <div class="guest-container df">
                 <div class="guest">
                   <div class="txt-guest">Guests</div>
-                  <div class="add-dates">Add dates</div>
+                  <div class="add-dates-s">Add guests</div>
                 </div>
                 <div class="search-button">
                   <svg class="searchsvg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -104,8 +118,70 @@
                       </path>
                     </g>
                   </svg>
+                  <div class="searchAppear">Search</div> 
                 </div>
+                <button class="circle-close"><span class="search-close"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></span></button>
+
               </div>
+              <!-- ------------------added for guest menu------------------ -->
+
+<div class="guest-menu">
+  <div class="age df" id="bordered">
+    <div class="adultstext">
+      <div class="bold-adults">Adults</div>
+      <div class="adult range">Ages 13 or above</div>
+    </div>
+    <div class="plus-minus df">
+      <button class="minus-button">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28"></path></svg>
+      </button>
+      <div class="counterp"|>0</div>
+      <button class="plus-button adult-button">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28m-14-14v28"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ----- -->
+  <div class="children">
+    <div class="age df"  id="bordered">
+      <div class="adultstext">
+        <div class="bold-adults">Children</div>
+        <div class="child range">Ages 2–12</div>
+      </div>
+      <div class="plus-minus df">
+        <button class="minus-button">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28"></path></svg>
+        </button>
+        <div class="counterp">0</div>
+        <button class="plus-button">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28m-14-14v28"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ---------- -->
+  <div class="infants">
+  <div class="age df">
+    <div class="adultstext">
+      <div class="bold-adults">Infants</div>
+      <div class="infant range">Under 2</div>
+    </div>
+    <div class="plus-minus df">
+      <button class="minus-button">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28"></path></svg>
+      </button>
+      <div class="counterp">0</div>
+      <button class="plus-button">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28m-14-14v28"></path></svg>
+      </button>
+    </div>
+  </div>
+</div>
+  <!-- --------------- -->
+</div>
+<!-- ------------------guest menu end----------------- -->
+
             </div>
           </div>
           <div class="right-menu df">
@@ -150,11 +226,25 @@
                   </path>
                 </svg>
               </div>
+   
             </div>
-          </div>
+                                     <!-- ---added for profile menu--- -->
+      <div class="profilemenu" id="hi1">
+        <div class="up df" id="hi1">
+          <a href="#" class="sin" id="hi1">Sign up</a>
+          <a href="#" class="" id="hi1">Log in</a>
         </div>
-      
-      
+        <div class="down df" id="hi1">
+          <a href="#" class="" id="hi1">Host your home</a>
+          <a href="#" class="" id="hi1">Host an experience</a>
+          <a href="#" class="" id="hi1">Help</a>
+        </div>
+      </div>
+      <!-- --------profile menu end ------------- -->
+          </div>
+
+        </div>
+            
         <div class="hero-text df">
           <div class="hero-question">
             <span>Not sure where to go? Perfect.</span>
@@ -163,10 +253,7 @@
             <span class="flexible-text">I'm flexible</span>
           </a>
         </div>
-      </div>
-      <!-- ----whitemenu start----- -->
-
-      
+      </div>     
     </div>
 
   </div>
