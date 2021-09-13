@@ -497,6 +497,7 @@ $(".sign-in-button").click(function () {
           locationMenu.style.display ="none";
           guestMenu.style.display ="none";
             $(".search-button").removeClass("exapnded-search");
+            $(".searchAppear").css("display", "none");
             $(".search-button").removeClass("increaseWidth");
             $(".location-container").removeClass("clickeffect");
             $(".guest-container").removeClass("clickeffect");
@@ -549,4 +550,20 @@ $(document).click(function (event) {
 
   }
 });
+
+//click on small-size-header
+$(".small-size-header").click(function(){
+  $(".mobile-top-menu").css("display" , "block");
+  $(".small-size-header").css("display" , "none");
+  $(".small-size-footer").css("display" , "block");
+
+
+})
+
+$(".mobile-size-button").click(function(){
+  $(".small-size-header").css("display" , "flex");
+  $(".mobile-top-menu").css("display" , "none");
+  //$(".small-size-footer").css("display" , "none");
+
+})
 //-------------------------------------------------------------------
