@@ -915,6 +915,7 @@ padding-top: 5px;}
   margin-top: 16px;
   @include smallDevice(){
     padding: 14.5px 32px !important;
+    z-index: 0;
     
   }
 }
@@ -942,6 +943,9 @@ padding-top: 5px;}
   font-size: 14px;
   font-family: regular;
   font-weight: 400;
+}
+.removeafter::after {
+  display: none;
 }
 
 .search-button {

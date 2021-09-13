@@ -508,6 +508,7 @@ $(".sign-in-button").click(function () {
 });
 //click on circular search button
   $(".search-button").click(function(){
+   if(guestMenu.style.display == block) { $(".guest-menu").css("display" , "none") }
   $(".searchAppear").css("display", "block");
   $(".search-button").addClass("increaseWidth");
   $(".search-button").addClass("searchclass");
@@ -566,4 +567,35 @@ $(".mobile-size-button").click(function(){
   //$(".small-size-footer").css("display" , "none");
 
 })
+
+//hover on white menu elements
+// ---guest---
+$(".guest").on({
+  mouseenter: function () {
+    $(".check-out-container").addClass("removeafter");
+  },
+  mouseleave: function () {
+    $(".check-out-container").removeClass("removeafter"); 
+  }
+});
+// ---checkIn---
+$(".check-out-container").on({
+  mouseenter: function () {
+    $(".check-in-container").addClass("removeafter");
+  },
+  mouseleave: function () {
+    $(".check-in-container").removeClass("removeafter"); 
+  }
+});
+
+// ---checkOut---
+$(".check-in-container").on({
+  mouseenter: function () {
+    $(".location-container").addClass("removeafter");
+  },
+  mouseleave: function () {
+    $(".location-container").removeClass("removeafter"); 
+  }
+});
+
 //-------------------------------------------------------------------

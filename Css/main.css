@@ -872,6 +872,7 @@ input:focus {
 @media (max-width: 743px) {
   .flexible-button {
     padding: 14.5px 32px !important;
+    z-index: 0;
   }
 }
 
@@ -898,6 +899,10 @@ input:focus {
   font-size: 14px;
   font-family: regular;
   font-weight: 400;
+}
+
+.removeafter::after {
+  display: none;
 }
 
 .search-button {
