@@ -755,7 +755,7 @@ input:focus {
   align-self: start;
   justify-content: center;
   max-width: 500px;
-  padding-left: 70px;
+  padding-left: 100px;
   flex: 5;
 }
 
@@ -815,7 +815,7 @@ input:focus {
 }
 
 .hero-text {
-  padding: 300px 80px 40px;
+  padding: 190px 80px 40px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
