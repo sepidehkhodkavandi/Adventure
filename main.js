@@ -423,21 +423,18 @@ minusButton.forEach((item, index) => {
 $(".guest").click(function () {
   if (guestMenu.style.display == "block") {
       guestMenu.style.display = "none";
-
-     // $(".circle-close").css("opacity", "0");
-      //$(".search-close").css("opacity", "0");
       $(".circle-close").css("display", "none");
       $(".search-close").css("display", "none");
       $("add-dates-s").css("textOoverflow", "unset");
   } else {
     guestMenu.style.display = "block";
-
+    $(".check-out-container").addClass("removeafter");
         if (locationMenu.style.display == "block" || profilemenu.style.display =="block")
          {
             locationMenu.style.display ="none";
             profilemenu.style.display ="none";
             guestMenu.style.display = "block";
-
+            $(".check-out-container").addClass("removeafter");
          }
    
         if ($(".add-dates-s").text() != "Add guests" ) {
@@ -448,6 +445,8 @@ $(".guest").click(function () {
           $(".add-dates-s").addClass("addellipsis");
          // $(".guest-container").addClass("clickeffect");
           guestMenu.style.display = "block";
+          $(".check-out-container").addClass("removeafter");
+
 
     }
     
@@ -469,9 +468,13 @@ $(".type-location").click(function () {
   if (locationMenu.style.display == "block") {
       locationMenu.style.display = "none";
       $(".location-container").removeClass("clickeffect");
+      $(".location-container").removeClass("removeafter");
+
+
 
   } else {
       locationMenu.style.display = "block";
+      $(".location-container").addClass("removeafter");
       $(".search-button").addClass("searchclass");
       $(".search-button").addClass("exapnded-search");
       $(".search-button").addClass("increaseWidth");
@@ -496,6 +499,8 @@ $(".sign-in-button").click(function () {
         {
           locationMenu.style.display ="none";
           guestMenu.style.display ="none";
+          $(".location-container").removeClass("removeafter");
+
             $(".search-button").removeClass("exapnded-search");
             $(".searchAppear").css("display", "none");
             $(".search-button").removeClass("increaseWidth");
@@ -536,6 +541,7 @@ $(document).click(function (event) {
     {
     profilemenu.style.display = "none";
     locationMenu.style.display = "none";
+    $(".location-container").removeClass("removeafter");
     guestMenu.style.display="none";
     $(".searchAppear").css("display", "none");
     $(".search-button").removeClass("increaseWidth");
