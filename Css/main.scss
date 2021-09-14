@@ -754,10 +754,26 @@ padding-top: 5px;}
   }
 
 }
+.hLRScroll{
+  margin-bottom: 100px;
+  @include mediumDevice(){
+    margin-bottom: 165px;
+  }
+}
 .headermenu.active::before {
   background-image: unset;
 }
-
+.headerScroll{
+  height: 180px;
+  @include mediumDevice(){
+    height: 244px !important;
+  }
+}
+.centerScroll{
+  @include mediumDevice(){
+    padding:65px 0  0 191px; 
+  }
+}
 .headermenu::before {
   background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
   content: "";
