@@ -20,7 +20,7 @@ function scrollFunction() {
     header.classList.add('active');
     document.querySelector('.whitemenu').classList.add('whiteActive');
     document.querySelector('.headermenu').classList.remove('headerScroll');
-    document.querySelector('.centerheader').style.padding = "0";
+    document.querySelector('.centerheader').classList.add("centerScroll");
     document.querySelector('.search-button').classList.add('searchBtnActive');
     document.querySelector('.searchsvg').classList.add('searchsvgActive');
     document.querySelector('.guest-container').classList.add('removeHover');
@@ -30,29 +30,26 @@ function scrollFunction() {
     document.querySelector('.check-out-container').style.display= "none";
     document.querySelector('.guest').style.display= "none";
     document.querySelector(".host").style.color = "#000";
-    document.querySelector('.left-menu').classList.remove("hLRScroll");
-    document.querySelector('.right-menu').classList.remove("hLRScroll");
     document.querySelectorAll('.svgLogo').forEach(function(e){ 
       e.setAttribute("fill", "rgb(255, 56, 92)");
     });
     document.querySelector('.lanlogo').style.fill = "#000";
     document.querySelector('.whitemenuText').style.display="block";
-    console.log("sefid shod");
+    document.querySelector('.overlay').style.display = "none";
 
     ////////////////////open menu
     const openMenu = function(){
+        document.querySelector('.overlay').style.display = "block";
         document.querySelector('.whitemenu').classList.remove('whiteActive');
         document.querySelector('.search-button').classList.remove('searchBtnActive');
         document.querySelector('.searchsvg').classList.remove('searchsvgActive');
         document.querySelector('.center').style.display ="flex";
-        document.querySelector('.location-container').style.display= "block";
-        document.querySelector('.check-in-container').style.display= "block";
-        document.querySelector('.check-out-container').style.display= "block";
+        document.querySelector('.location-container').style.display= "flex";
+        document.querySelector('.check-in-container').style.display= "flex";
+        document.querySelector('.check-out-container').style.display= "flex";
         document.querySelector('.whitemenuText').style.display="none";
-        document.querySelector('.guest').style.display= "block";
-        document.querySelector('.left-menu').classList.add("hLRScroll");
-        document.querySelector('.right-menu').classList.add("hLRScroll");
-        document.querySelector('.centerheader').classList.add("centerScroll");
+        document.querySelector('.guest').style.display= "flex";
+        document.querySelector('.centerheader').classList.remove("centerScroll");
         document.querySelector('.guest-container').classList.remove('removeHover');
         document.querySelectorAll('.clink').forEach(function(link) {
           link.style.color= "#000000";
@@ -78,18 +75,18 @@ function scrollFunction() {
     document.querySelector('.searchsvg').classList.remove('searchsvgActive');
     document.querySelector('.guest-container').classList.remove('removeHover');
     document.querySelector('.center').style.display ="flex";
-    document.querySelector('.location-container').style.display= "block";
-    document.querySelector('.check-in-container').style.display= "block";
-    document.querySelector('.check-out-container').style.display= "block";
+    document.querySelector('.location-container').style.display= "flex";
+    document.querySelector('.check-in-container').style.display= "flex";
+    document.querySelector('.check-out-container').style.display= "flex";
     document.querySelector('.whitemenuText').style.display="none";
-    document.querySelector('.guest').style.display= "block";
-    document.querySelector('.centerheader').style.padding = "0";
+    document.querySelector('.guest').style.display= "flex";
     document.querySelectorAll('.clink').forEach(function(link) {
       link.style.color= "#ffff";
     });
     document.querySelector('.places').classList.remove('placesBlack');
     document.querySelector('.exp').classList.remove('expBlack');
     document.querySelector('.onlineexp').classList.remove('onlineexpBlack');
+    document.querySelector('.centerheader').classList.remove("centerScroll");
   }
 }
 
