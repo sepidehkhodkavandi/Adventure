@@ -492,11 +492,13 @@ minusButton.forEach((item, index) => {
 });
 
 $(".guest-container").click(function () {
+  if (window.innerWidth >= 950) {
   $(".guest-container").addClass("clickeffect");
   $(".searchAppear").css("display", "block");
   $(".search-button").addClass("increaseWidth");
   $(".search-button").addClass("searchclass");
   $(".search-button").addClass("exapnded-search");
+  }
 });
 
 
@@ -577,7 +579,6 @@ $(".sign-in-button").click(function () {
       locationMenu.style.display = "none";
       guestMenu.style.display = "none";
       $(".location-container").removeClass("removeafter");
-
       $(".search-button").removeClass("exapnded-search");
       $(".searchAppear").css("display", "none");
       $(".search-button").removeClass("increaseWidth");
@@ -590,16 +591,16 @@ $(".sign-in-button").click(function () {
 });
 //click on circular search button
 $(".search-button").click(function () {
-  if (guestMenu.style.display == block) { $(".guest-menu").css("display", "none") }
+  if (guestMenu.style.display == "block") { $(".guest-menu").css("display", "none") }
+  if (window.innerWidth >= 950) {
   $(".searchAppear").css("display", "block");
   $(".search-button").addClass("increaseWidth");
   $(".search-button").addClass("searchclass");
   $(".search-button").addClass("exapnded-search");
+  }
   $(".location-input-menu").css("display", "block");
   $(".guest-container").removeClass("clickeffect");
   $(".location-container").addClass("clickeffect");
-
-
 });
 //click on anywhere in the document except the ones mentioned in the if condition
 $(document).click(function (event) {

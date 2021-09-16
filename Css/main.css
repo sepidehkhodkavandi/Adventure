@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: regular;
+  font-family: bookAirbnb;
 }
 
 html {
@@ -26,14 +26,23 @@ a {
 }
 
 @font-face {
-  font-family: boldfont;
-  src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
-  font-weight: 700;
+  font-family: XMAirbnb;
+  src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: bookAirbnb;
+  src: url("../Font/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2") format("woff2");
 }
 
 @font-face {
   font-family: regular;
-  src: url("../Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
+  src: url("../Font/Airbnb_Cereal-Medium-50fc004b3082375f12ff0cfb67bf8e56.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: boldfont;
+  src: url("../Font/Airbnb_Cereal-Bold-bdfb98485e7836ba31b456f65cded088.woff2") format("woff2");
 }
 
 .hero-section {
@@ -97,6 +106,7 @@ a {
 .headermenu {
   width: 100%;
   position: fixed;
+  z-index: 500;
 }
 
 .mobile-size-button {
@@ -157,6 +167,10 @@ a {
   .innerheader {
     display: none;
   }
+}
+
+.adultstext, .guest, .title-input-menu {
+  text-align: left;
 }
 
 .activemenu {
@@ -371,17 +385,14 @@ input:focus {
 
 .clink {
   color: #fff;
-  font-family: regular;
-  padding-right: 16px;
-  padding-left: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-family: bookAirbnb !important;
+  padding: 10px 16px !important;
   white-space: nowrap;
 }
 
 @media (max-width: 1127px) {
   .clink {
-    padding-left: 6px;
+    padding: 10px 12px !important;
   }
 }
 
@@ -416,12 +427,6 @@ input:focus {
   align-items: center;
   justify-content: center;
   height: 80px;
-}
-
-@media (max-width: 949px) {
-  .center {
-    width: 380px;
-  }
 }
 
 .places::before {
@@ -484,8 +489,8 @@ input:focus {
 .host {
   color: #fff;
   text-decoration: none;
-  font-family: boldfont;
-  padding: 5px;
+  font-family: regular;
+  padding: 12px;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -494,6 +499,10 @@ input:focus {
   width: 30px;
   height: 30px;
   color: #717171;
+}
+
+.hamburger-menu svg {
+  stroke: #222222 !important;
 }
 
 .sign-in-button {
@@ -544,10 +553,6 @@ input:focus {
 .language:hover {
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 22px;
-}
-
-.hamburger-menu {
-  color: #222222;
 }
 
 .mobile-top-menu {
@@ -623,7 +628,7 @@ input:focus {
 }
 
 .add-dates {
-  font-family: regular;
+  font-family: bookAirbnb;
   font-size: 14px;
   color: #717171;
   line-height: 18px;
@@ -631,7 +636,7 @@ input:focus {
 }
 
 .add-dates-s {
-  font-family: regular;
+  font-family: bookAirbnb;
   font-size: 14px;
   color: #222222;
   line-height: 18px;
@@ -764,11 +769,14 @@ input:focus {
   outline: none;
 }
 
+.type-location::placeholder {
+  font-family: bookAirbnb;
+  font-size: 14px;
+}
+
 .type-location {
   width: 200%;
-  font-size: 14px;
   line-height: 18px;
-  font-weight: 600;
   color: #222222;
   text-overflow: ellipsis;
   outline: none;
@@ -782,7 +790,13 @@ input:focus {
   align-self: start;
   justify-content: center;
   max-width: 500px;
-  padding-left: 100px;
+  padding: 0px !important;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   flex: 5;
 }
 
@@ -792,16 +806,10 @@ input:focus {
   }
 }
 
-@media (max-width: 830px) {
-  .centerheader {
-    padding-left: 130px;
-  }
-}
-
 @media (max-width: 949px) {
   .centerheader {
-    transform: translate(6%, 65px);
     position: absolute;
+    transform: translateY(65px);
   }
 }
 
@@ -821,7 +829,7 @@ input:focus {
 
 @media (max-width: 949px) {
   .centerScroll {
-    transform: translate(-80px, 0px);
+    transform: translate(-140px, 0px);
   }
 }
 
@@ -867,7 +875,12 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: -1;
+}
+
+@media (max-width: 949px) {
+  .hero-text {
+    padding: 250px 80px 40px;
+  }
 }
 
 @media (max-width: 743px) {
@@ -879,21 +892,21 @@ input:focus {
 
 @media (max-width: 588px) {
   .hero-text {
-    padding: 110px 32vw 40px;
+    padding: 110px 32vw 40px !important;
     text-align: center;
   }
 }
 
 @media (max-width: 488px) {
   .hero-text {
-    padding: 110px 25vw 40px;
+    padding: 110px 25vw 40px !important;
     text-align: center;
   }
 }
 
 @media (max-width: 375px) {
   .hero-text {
-    padding: 110px 20vw 40px;
+    padding: 110px 20vw 40px !important;
     text-align: center;
   }
 }
@@ -1037,25 +1050,27 @@ input:focus {
   max-width: 1760px;
 }
 
+@media (max-width: 1127px) {
+  .nearby {
+    padding-left: 40px;
+  }
+}
+
 @media (max-width: 743px) {
   .nearby {
     padding-left: 0px;
     padding-right: 0px;
-  }
-}
-
-@media (min-width: 950px) {
-  .nearby {
-    margin-right: auto;
-    margin-left: auto;
+    margin-top: 36px;
+    margin-bottom: 48px;
   }
 }
 
 .nearby .nearby-title {
-  padding-bottom: 16px;
   font-size: 32px;
   color: #222222;
   font-family: boldfont;
+  padding-left: 8px;
+  font-weight: 700;
 }
 
 @media (max-width: 1127px) {
@@ -1067,6 +1082,7 @@ input:focus {
 @media (max-width: 743px) {
   .nearby .nearby-title {
     font-size: 22px;
+    padding-left: 0px;
   }
 }
 
@@ -1079,7 +1095,6 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin: -8px !important;
 }
 
 @media (max-width: 1127px) {
@@ -1090,6 +1105,7 @@ input:focus {
     overflow-x: auto !important;
     padding: 0px;
     margin: 0px;
+    padding-left: 8px;
   }
 }
 
@@ -1329,6 +1345,10 @@ input:focus {
   padding: 16px 32px !important;
 }
 
+.plus-button {
+  cursor: pointer;
+}
+
 .plus-button:hover {
   color: #222222 !important;
   border-color: #222222 !important;
@@ -1436,6 +1456,7 @@ input:focus {
   font-weight: 400 !important;
   font-size: 16px !important;
   line-height: 20px !important;
+  cursor: pointer;
 }
 
 .plus-minus .input {
@@ -1660,6 +1681,12 @@ input:focus {
     font-size: 26px;
     font-weight: 700;
     line-height: 30px;
+  }
+}
+
+@media (max-width: 743px) {
+  .liveAnywhere h1 {
+    font-size: 22px;
   }
 }
 

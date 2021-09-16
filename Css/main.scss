@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: regular;
+  font-family: bookAirbnb;
 }
 html {
   scroll-behavior: smooth;
@@ -20,25 +20,45 @@ html {
 a {
   text-decoration: none;
 }
-
-// -------font-face-------
+//new font face
 @font-face {
-  font-family: boldfont;
-  src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
-  font-weight: 700;
+  font-family: XMAirbnb;
+  src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: bookAirbnb;
+  src: url("../Font/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2") format("woff2");
 }
 
 @font-face {
   font-family: regular;
-  src: url("../Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
+  src: url("../Font/Airbnb_Cereal-Medium-50fc004b3082375f12ff0cfb67bf8e56.woff2") format("woff2");
 }
+
+
+@font-face {
+  font-family: boldfont;
+  src: url("../Font/Airbnb_Cereal-Bold-bdfb98485e7836ba31b456f65cded088.woff2") format("woff2");
+}
+// -------font-face-------
+// @font-face {
+//   font-family: boldfont;
+//   src: url("../Font/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
+//   font-weight: 700;
+// }
+
+// @font-face {
+//   font-family: regular;
+//   src: url("../Font/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
+// }
 //------------------------
 
 $smallDevice:743px;
 $largeDevice:1127px;
 $mediumDevice:949px;
 //added by sepideh
-$eightDevice:830px;
+$eightDevice:900px;
 $xsmallDevice :588px;
 $xxsmallDevice :488px;
 $xxxsmallDevice :375px;
@@ -154,6 +174,7 @@ $xxxsmallDevice :375px;
   .headermenu{
     width: 100%;
     position: fixed;
+    z-index: 500;
   }
 
   .mobile-size-button{
@@ -204,7 +225,9 @@ $xxxsmallDevice :375px;
       }
   
 }
-
+.adultstext, .guest, .title-input-menu{
+text-align: left;
+}
 .activemenu {
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px !important;
@@ -406,14 +429,11 @@ input:focus{
 
 .clink {
   color: #fff;
-  font-family: regular;
-  padding-right: 16px;
-  padding-left: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-family: bookAirbnb !important;
+  padding: 10px 16px !important;
   white-space: nowrap;
   @include largeDevice(){
-    padding-left: 6px;
+    padding: 10px 12px !important;
   }
   @include mediumDevice(){
     padding-left: 0px;
@@ -446,9 +466,9 @@ input:focus{
   align-items: center;
   justify-content: center;
   height: 80px;
-  @include mediumDevice(){
-    width: 380px;
-  }
+  // @include mediumDevice(){
+  //   width: 380px;
+  // }
 }
 
 .places::before {
@@ -533,8 +553,8 @@ input:focus{
 .host {
   color: #fff;
   text-decoration: none;
-  font-family: boldfont;
-  padding: 5px;
+  font-family: regular;
+  padding: 12px;
   font-size: 14px;
   white-space: nowrap;
 }
@@ -543,6 +563,11 @@ input:focus{
   width: 30px;
   height: 30px;
   color: #717171;
+}
+.hamburger-menu {
+  svg{
+  stroke: #222222 !important;
+  }
 }
 
 .sign-in-button {
@@ -595,9 +620,7 @@ input:focus{
   border-radius: 22px;
 }
 
-.hamburger-menu {
-  color: #222222;
-}
+
 
 
 
@@ -677,14 +700,14 @@ input:focus{
 
 
 .add-dates {
-  font-family: regular;
+  font-family: bookAirbnb;
   font-size: 14px;
   color: #717171;
   line-height: 18px;
   font-weight: 400;
 }
 .add-dates-s{
-  font-family: regular;
+  font-family: bookAirbnb;
   font-size: 14px;
   color: #222222;
   line-height: 18px;
@@ -820,12 +843,18 @@ input:focus{
 .type-location:focus {
   outline: none;
 }
+.type-location::placeholder{
+  font-family: bookAirbnb;
+  font-size: 14px;
+
+}
 
 .type-location {
+  //font-family: bookAirbnb;
   width: 200%;
-  font-size: 14px;
+ // font-size: 14px;
   line-height: 18px;
-  font-weight: 600;
+  //font-weight: 600;
   color: #222222;
   text-overflow: ellipsis;
   outline: none;
@@ -839,19 +868,26 @@ input:focus{
   align-self: start;
   justify-content: center;
   max-width: 500px;
-  padding-left: 100px;
+  padding: 0px !important;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   flex: 5;
   @include largeDevice(){
     padding-left: 191px;
   }
-  @include eightDevice(){
-   padding-left: 130px;
-  }
+  
   @include mediumDevice(){
-    transform: translate(6%, 65px);
+    //transform: translate(15%, 65px);
     position: absolute;
+    //margin-top: 65px;
+    transform: translateY(65px);
   }
-
+//   @include eightDevice(){
+//     transform: translate(1.5%, 65px);   }
 }
 .headermenu.active::before {
   background-image: unset;
@@ -864,7 +900,7 @@ input:focus{
 }
 .centerScroll{
   @include mediumDevice(){
-    transform: translate(-80px, 0px);
+    transform: translate(-140px, 0px);
   }
 }
 .headermenu::before {
@@ -910,23 +946,24 @@ input:focus{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: -1;
-
+  //z-index: -1;
+  @include mediumDevice(){
+    padding: 250px 80px 40px;
+  }
    @include smallDevice(){
     padding: 110px 35vw 40px;
      text-align: center;
-
-    }
+    }  
    @include xsmallDevice(){
-      padding: 110px 32vw 40px;
+      padding: 110px 32vw 40px !important;
       text-align: center;
      }
     @include xxsmallDevice(){
-    padding: 110px 25vw 40px;
+    padding: 110px 25vw 40px !important;
       text-align: center;
     }
    @include xxxsmallDevice(){
-    padding: 110px 20vw 40px;
+    padding: 110px 20vw 40px !important;
     text-align: center;
   }
  
@@ -1077,26 +1114,39 @@ input:focus{
   line-height: 52px;
   width: 100%;
   max-width: 1760px;
+  @include largeDevice(){
+    padding-left: 40px; 
+
+  }
+  // @include minMeddevic(){
+  //   margin-right: auto;
+  //   //margin-left: auto;
+  //   padding-left: 40px; 
+
+  // }
   @include smallDevice(){
     padding-left: 0px;
     padding-right: 0px;
+    margin-top: 36px;
+    margin-bottom: 48px;
   }
-  @include minMeddevic(){
-    margin-right: auto;
-    margin-left: auto;
-  }
+ 
 
 
   .nearby-title {
-    padding-bottom: 16px;
+    //padding-bottom: 16px;
     font-size: 32px;
     color: #222222;
     font-family: boldfont;
+    padding-left: 8px;
+    font-weight: 700;
     @include largeDevice() {
       font-size: 26px;
     }
     @include smallDevice() {
       font-size: 22px;
+      padding-left: 0px;
+
     }
   }
 
@@ -1108,7 +1158,7 @@ input:focus{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin: -8px !important;
+    //margin: -8px !important;
 
     @include largeDevice() {
       grid-template-columns: repeat(3, 1fr);
@@ -1117,6 +1167,7 @@ input:focus{
       overflow-x: auto !important;
       padding: 0px;
       margin: 0px;
+      padding-left: 8px;
     }
   
     @include smallDevice() {
@@ -1362,7 +1413,9 @@ input:focus{
         overflow-y: auto !important;
         padding: 16px 32px !important;
     }
-    
+    .plus-button{
+      cursor: pointer;
+    }
     .plus-button:hover{
         color: rgb(34, 34, 34) !important;
         border-color: rgb(34, 34, 34) !important;
@@ -1494,6 +1547,7 @@ input:focus{
         font-weight: 400 !important;
         font-size: 16px !important;
         line-height: 20px !important;
+        cursor: pointer;
         .input{
           border: none;
           font-size: 14px;
@@ -1698,6 +1752,9 @@ color: rgb(34, 34, 34) !important;
     font-size: 26px;
     font-weight: 700;
     line-height: 30px;
+    }
+    @include smallDevice(){
+      font-size: 22px;
     }
   }
 
