@@ -14,6 +14,10 @@ html {
   display: none;
 }
 
+.db {
+  display: block;
+}
+
 .df {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,18 +63,10 @@ a {
   display: none;
   width: 100%;
   height: 100%;
-  margin-top: 180px;
   background-color: rgba(0, 0, 0, 0.25) !important;
   background-size: cover;
   inset: 0px !important;
   position: fixed !important;
-  z-index: 99 !important;
-}
-
-@media (max-width: 949px) {
-  .overlay {
-    margin-top: 244px;
-  }
 }
 
 .hero {
@@ -152,6 +148,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   z-index: 10;
 }
 
@@ -581,13 +578,6 @@ input:focus {
   position: relative;
 }
 
-@media (max-width: 830px) {
-  .right-menu {
-    -webkit-transform: translateX(-80px);
-            transform: translateX(-80px);
-  }
-}
-
 .right-menu,
 .hostcontainer {
   -webkit-box-align: center;
@@ -753,6 +743,14 @@ input:focus {
   margin-top: 0;
 }
 
+@media (max-width: 949px) {
+  .location-container {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
 @media (max-width: 743px) {
   .location-container {
     padding: 14px 24px;
@@ -856,7 +854,7 @@ input:focus {
 }
 
 .type-location {
-  width: 100%;
+  width: 200%;
   font-size: 14px;
   line-height: 18px;
   font-weight: 600;
@@ -901,8 +899,9 @@ input:focus {
 
 @media (max-width: 949px) {
   .centerheader {
-    -webkit-transform: translate(40px, 65px);
-            transform: translate(40px, 65px);
+    -webkit-transform: translate(85px, 65px);
+            transform: translate(85px, 65px);
+    position: absolute;
   }
 }
 
@@ -922,8 +921,8 @@ input:focus {
 
 @media (max-width: 949px) {
   .centerScroll {
-    -webkit-transform: translate(-135px, 0px);
-            transform: translate(-135px, 0px);
+    -webkit-transform: translate(-80px, 0px);
+            transform: translate(-80px, 0px);
   }
 }
 
@@ -956,6 +955,10 @@ input:focus {
   z-index: 0;
   -webkit-transition: opacity 150ms ease 0s;
   transition: opacity 150ms ease 0s;
+}
+
+.rmenuScrollHover:hover {
+  background-color: #f7f7f7;
 }
 
 .hero-question {
@@ -1734,6 +1737,12 @@ input:focus {
   width: 100%;
 }
 
+@media (max-width: 949px) {
+  .main-two-2 {
+    margin-top: 20px;
+  }
+}
+
 .live-pic::-webkit-scrollbar {
   display: none !important;
 }
@@ -1932,7 +1941,7 @@ input:focus {
 
 @media (max-width: 743px) {
   .main-two-3 .m-2-3-container {
-    height: 848px;
+    height: 110vw;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -2199,7 +2208,8 @@ input:focus {
 
 .m-2-4-pic a p {
   font-family: regular;
-  color: #222222;
+  color: #717171;
+  margin-top: 4px;
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;

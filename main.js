@@ -36,7 +36,8 @@ function scrollFunction() {
     document.querySelector('.lanlogo').style.fill = "#000";
     document.querySelector('.whitemenuText').style.display="block";
     document.querySelector('.overlay').style.display = "none";
-
+    document.querySelector('.host').classList.add("rmenuScrollHover");
+    document.querySelector(".language").classList.add("rmenuScrollHover");
     ////////////////////open menu
     const openMenu = function(){
         document.querySelector('.overlay').style.display = "block";
@@ -48,7 +49,7 @@ function scrollFunction() {
         document.querySelector('.check-in-container').style.display= "flex";
         document.querySelector('.check-out-container').style.display= "flex";
         document.querySelector('.whitemenuText').style.display="none";
-        document.querySelector('.guest').style.display= "flex";
+        document.querySelector('.guest').style.display= "block";
         document.querySelector('.centerheader').classList.remove("centerScroll");
         document.querySelector('.guest-container').classList.remove('removeHover');
         document.querySelectorAll('.clink').forEach(function(link) {
@@ -60,9 +61,29 @@ function scrollFunction() {
         document.querySelector('.headermenu').classList.add('headerScroll');
         }
     document.querySelector('.whitemenu').addEventListener('click', openMenu);
+    const header0 = document.querySelector('#header0');
+    window.onclick = function(event) {
+      if (event.target == header0) {
+        document.querySelector('.whitemenu').classList.add('whiteActive');
+        document.querySelector('.search-button').classList.add('searchBtnActive');
+        document.querySelector('.searchsvg').classList.add('searchsvgActive');
+        document.querySelector('.guest-container').classList.add('removeHover');
+        document.querySelector('.center').style.display ="none";
+        document.querySelector('.location-container').style.display= "none";
+        document.querySelector('.check-in-container').style.display= "none";
+        document.querySelector('.check-out-container').style.display= "none";
+        document.querySelector('.guest').style.display= "none";
+        document.querySelector(".host").style.color = "#000";
+        document.querySelector('.headermenu').classList.remove('headerScroll');
+        document.querySelector('.centerheader').classList.add("centerScroll");
+        document.querySelector('.whitemenuText').style.display="block";
+        document.querySelector('.overlay').style.display = "none";
+      }
+    }
     
   } else  {
     header.style.backgroundColor = "unset" ;
+    document.querySelector('.overlay').style.display = "none";
     header.classList.remove('active');
     document.querySelector(".host").style.color = "#fff";
     document.querySelectorAll('.svgLogo').forEach(function(e){ 
@@ -79,7 +100,7 @@ function scrollFunction() {
     document.querySelector('.check-in-container').style.display= "flex";
     document.querySelector('.check-out-container').style.display= "flex";
     document.querySelector('.whitemenuText').style.display="none";
-    document.querySelector('.guest').style.display= "flex";
+    document.querySelector('.guest').style.display= "block";
     document.querySelectorAll('.clink').forEach(function(link) {
       link.style.color= "#ffff";
     });
@@ -87,8 +108,11 @@ function scrollFunction() {
     document.querySelector('.exp').classList.remove('expBlack');
     document.querySelector('.onlineexp').classList.remove('onlineexpBlack');
     document.querySelector('.centerheader').classList.remove("centerScroll");
+    document.querySelector('.host').classList.remove("rmenuScrollHover");
+    document.querySelector(".language").classList.remove("rmenuScrollHover");
   }
 }
+
 
 // live anywhere
 

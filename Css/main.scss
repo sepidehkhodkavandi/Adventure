@@ -10,7 +10,9 @@ html {
 .dn {
   display: none;
 }
-
+.db{
+  display: block;
+}
 .df {
   display: flex;
 }
@@ -121,16 +123,12 @@ $xxxsmallDevice :375px;
   display: none;
   width: 100%;
   height: 100%;
-  margin-top: 180px;
   background-color: rgba(0, 0, 0, 0.25) !important;
   background-size: cover;
   inset: 0px !important;
   position: fixed !important;
-  z-index: 99 !important;
-  @include mediumDevice(){
-    margin-top: 244px;
-  }
 }
+  
 .hero {
   width: 100%;
   height: 100%;
@@ -189,6 +187,7 @@ $xxxsmallDevice :375px;
     justify-content: space-between;
     width: 100%;
     display: flex;
+    position: relative;
    // position: fixed;
     z-index: 10;
       @include minMeddevic(){
@@ -560,9 +559,7 @@ padding-top: 5px;}
 }
 .right-menu {
   position: relative;
-  @include eightDevice(){
-    transform: translateX(-80px);
-  }
+ 
 }
 
 
@@ -711,10 +708,13 @@ padding-top: 5px;}
 }
 
 .location-container {
-  //flex: 1.5 0 0% ;
+  
   color: #222222;
   text-align: left;
   margin-top: 0;
+  @include mediumDevice(){
+    flex: 1;
+  }
   @include smallDevice(){
     padding: 14px 24px;;
   }
@@ -810,7 +810,7 @@ padding-top: 5px;}
 }
 
 .type-location {
-  width: 100%;
+  width: 200%;
   font-size: 14px;
   line-height: 18px;
   font-weight: 600;
@@ -836,7 +836,8 @@ padding-top: 5px;}
    padding-left: 130px;
   }
   @include mediumDevice(){
-    transform: translate(40px,65px);
+    transform: translate(6%, 65px);
+    position: absolute;
   }
 
 }
@@ -851,7 +852,7 @@ padding-top: 5px;}
 }
 .centerScroll{
   @include mediumDevice(){
-    transform: translate(-135px, 0px);
+    transform: translate(-80px, 0px);
   }
 }
 .headermenu::before {
@@ -881,6 +882,9 @@ padding-top: 5px;}
   width: 100%;
   z-index: 0;
   transition: opacity 150ms ease 0s;
+}
+.rmenuScrollHover:hover{
+  background-color: rgb(247, 247, 247);
 }
 
 .hero-question {
@@ -1574,6 +1578,9 @@ padding-top: 5px;}
 
   margin-top: 40px;
   width: 100%;
+  @include mediumDevice(){
+    margin-top: 20px;
+  }
 }
 
 .live-pic::-webkit-scrollbar{
@@ -1722,7 +1729,7 @@ padding-top: 5px;}
     padding-left: 40px;
    }
    @include smallDevice(){
-     height: 848px;
+     height:110vw;
      padding-left: 24px;
      padding-right: 24px;
    }
@@ -1924,7 +1931,8 @@ padding-top: 5px;}
 
     p {
       font-family: regular;
-      color: rgb(34, 34, 34);
+      color:rgb(113, 113, 113);
+      margin-top: 4px;
       font-size: 14px;
       line-height: 18px;
       font-weight: 400;
