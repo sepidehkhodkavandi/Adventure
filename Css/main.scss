@@ -898,7 +898,7 @@ padding-top: 5px;}
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //z-index: 500;
+  z-index: -1;
 
    @include smallDevice(){
     padding: 110px 35vw 40px;
@@ -1534,6 +1534,115 @@ padding-top: 5px;}
   }
     
 //----------------------------------------end sepideh
+/////////***************flexible calendar Helia***************//////////
+.imflexible-container{
+  background: rgb(255, 255, 255) ;
+  border-radius: 32px ;
+  // box-shadow: rgb(0 0 0  20%) 0px 6px 20px ;
+  margin-top: 12px ;
+  max-height: calc(100vh - 220px) ;
+  overflow: hidden auto ;
+  padding: 16px 32px ;
+  display: none;
+ 
+}
+.flexActive{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stay, .go-in{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.stay-btn{
+  cursor: pointer ;
+  text-align: center ;
+  border: 1px solid rgb(176, 176, 176) ;
+  background-color: rgb(255, 255, 255) ;
+  outline: none ;
+  margin: 0px ;
+  border-radius: 30px ;
+  color: rgb(34, 34, 34) ;
+  padding: 8px 16px ;
+  font-size: 12px ;
+  line-height: 16px ;
+  outline: currentcolor none medium !important;
+}
+.stay-btn:hover{
+  //color: rgb(0, 0, 0) ;
+  border:1px solid rgb(34, 34, 34) ;;
+}
+.stayBtnActive{
+  background-color: rgb(247, 247, 247) ;
+  border: 1.5px solid rgb(0, 0, 0) !important ;
+}
+.fc-btns{
+  margin-right: 4px;
+}
+.fc-d1{
+  font-size: 18px ;
+  line-height: 24px ;
+  font-weight: 400 ;
+  color: rgb(113, 113, 113) ;
+  padding-top: 8px ;
+  padding-bottom: 16px ;
+  margin: 0px ;
+  span{
+    display: inline ;
+    font-weight: 800 ;
+    color: rgb(34, 34, 34) ;
+  }
+}
+.go-in{
+  margin-top: 24px;
+  font-size: 18px ;
+  line-height: 24px ;
+  font-weight: 400 ;
+  color: rgb(113, 113, 113) ;
+  padding-top: 8px ;
+  padding-bottom: 16px ;
+  span{
+    font-weight: 800 !important;
+    color: rgb(34, 34, 34) !important;
+  }
+}
+.fc-d3{
+  margin-top: 16px;
+}
+.fc-goin-btn{
+  margin-right: 8px ;
+  margin-top: 4px ;
+  margin-bottom: 4px ;
+  cursor: pointer ;
+  text-align: center ;
+  border: 1px solid rgba(176, 176, 176, 0.5) ;
+  background-color: rgb(255, 255, 255) ;
+  outline: none ;
+  padding: 0px ;
+  margin: 0px ;
+  border-radius: 16px ;
+  color: rgb(34, 34, 34) ;
+  font-size: 12px ;
+  line-height: 16px ;
+  width: 111px ;
+  height: 120px;
+}
+.activeMonth{
+ 
+background-color: rgb(247, 247, 247) !important;
+color: rgb(34, 34, 34) !important;
+}
+.fc-goin-btn{
+  img{
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
 
 /********************************************helia-main2**********************************************/
 /*Live anywhere- Helia**/
@@ -2272,32 +2381,31 @@ footer svg {
 
 .container-calendar {
   display: none;
-  width: 100%;
-  max-width: 850px;
+  width: 800px;
   // align-items: center;
-  justify-content: center;
+  //justify-content: center;
   // overflow: auto hidden;
   box-shadow: 1px 1px 1px 1px gray;
-  height: 475px;
-  z-index: 1;
-  position: absolute;
-  margin-top: 650px;
-  right: 362px;
+  min-height: 400px;
+  z-index: 5;
+  margin-top: 28px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0% ;
   border-radius: 32px ;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px ;
   overflow: hidden auto ;
-
+  flex-direction: column;
+  align-self: center;
 
   .selection {
     width: 200px;
     background-color: rgb(235, 235, 235);
     border-radius: 100px;
     height: 36px;
-    margin-top: 1.5em;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
   }
 
 

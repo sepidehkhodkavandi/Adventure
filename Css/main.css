@@ -979,6 +979,7 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: -1;
 }
 
 @media (max-width: 743px) {
@@ -1696,6 +1697,140 @@ input:focus {
   background-color: white !important;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px !important;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px !important;
+}
+
+.imflexible-container {
+  background: white;
+  border-radius: 32px;
+  margin-top: 12px;
+  max-height: calc(100vh - 220px);
+  overflow: hidden auto;
+  padding: 16px 32px;
+  display: none;
+}
+
+.flexActive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stay, .go-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stay-btn {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #b0b0b0;
+  background-color: white;
+  outline: none;
+  margin: 0px;
+  border-radius: 30px;
+  color: #222222;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 16px;
+  outline: currentcolor none medium !important;
+}
+
+.stay-btn:hover {
+  border: 1px solid #222222;
+}
+
+.stayBtnActive {
+  background-color: #f7f7f7;
+  border: 1.5px solid black !important;
+}
+
+.fc-btns {
+  margin-right: 4px;
+}
+
+.fc-d1 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #717171;
+  padding-top: 8px;
+  padding-bottom: 16px;
+  margin: 0px;
+}
+
+.fc-d1 span {
+  display: inline;
+  font-weight: 800;
+  color: #222222;
+}
+
+.go-in {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #717171;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.go-in span {
+  font-weight: 800 !important;
+  color: #222222 !important;
+}
+
+.fc-d3 {
+  margin-top: 16px;
+}
+
+.fc-goin-btn {
+  margin-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgba(176, 176, 176, 0.5);
+  background-color: white;
+  outline: none;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 16px;
+  color: #222222;
+  font-size: 12px;
+  line-height: 16px;
+  width: 111px;
+  height: 120px;
+}
+
+.activeMonth {
+  background-color: #f7f7f7 !important;
+  color: #222222 !important;
+}
+
+.fc-goin-btn img {
+  width: 32px !important;
+  height: 32px !important;
 }
 
 /********************************************helia-main2**********************************************/
@@ -2602,23 +2737,24 @@ footer svg {
 
 .container-calendar {
   display: none;
-  width: 100%;
-  max-width: 850px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 800px;
   -webkit-box-shadow: 1px 1px 1px 1px gray;
           box-shadow: 1px 1px 1px 1px gray;
-  height: 475px;
-  z-index: 1;
-  position: absolute;
-  margin-top: 650px;
-  right: 362px;
+  min-height: 400px;
+  z-index: 5;
+  margin-top: 28px;
   background: white none repeat scroll 0% 0%;
   border-radius: 32px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
   overflow: hidden auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .container-calendar .selection {
@@ -2626,7 +2762,7 @@ footer svg {
   background-color: #ebebeb;
   border-radius: 100px;
   height: 36px;
-  margin-top: 1.5em;
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2636,6 +2772,8 @@ footer svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .container-calendar .btn-tab {

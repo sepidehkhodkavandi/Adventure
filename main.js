@@ -114,8 +114,70 @@ function scrollFunction() {
   }
 }
 
+//////////////// flexible calendar - Helia//////////////////////////
+const flexBtn = document.querySelector('#flexibleBtn');
+const flexCalender = document.querySelector('.imflexible-container');
+let stayText = document.querySelector('.stay-txt');
+const stayButton = document.querySelectorAll('.stay-btn');
+const months = document.querySelectorAll('.flexibleMonth');
+const monthBtn = document.querySelectorAll('.fc-goin-btn');
+const go = document.querySelector('.go');
+const flexibleText = document.querySelector('.addDatumIn'); 
+let flexTxt1 = "weekend";
+let flexTxt2 = "sep, oct";
+flexBtn.addEventListener('click',  function(){
+    flexCalender.classList.toggle('flexActive');
+    document.querySelector('#dates').style.backgroundColor = "unset";
+    document.querySelector(".check-out-container").style.display="none";
+    document.querySelector('.txt-chin').innerHTML = "Flexible dates";
+    flexibleText.innerText = flexTxt1 + " in " + flexTxt2;
+});
+//set "stay for" section - Helia
+stayButton.forEach(function(e){
+ e.addEventListener('click', function() {
+    stayText.innerText = e.textContent;
+    e.classList.toggle("stayBtnActive");
+    flexibleText.innerText =stayText.innerText + " in " + flexTxt2;
+ });
+});
+const monthsArr= ["September", 'October', "November", "December", "January", "February"]
+const selectedMonths = ["September", 'October',"","","",""]
+let counter = 2;
+monthBtn.forEach(function (e) {
+    e.addEventListener('click', function () {
+        for (let i = 0; i < monthsArr.length; i++) {
+            if(monthsArr[i] == e.children[1].innerHTML){
+                if(monthsArr[i] == selectedMonths[i] && counter>1){
+                    selectedMonths[i]="";
+                    e.children[0].src ="./Images/cal1.png";
+                    e.classList.remove('activeMonth')
+                    counter --;
+                }else if(monthsArr[i] !== selectedMonths[i]){
+                    selectedMonths[i]=monthsArr[i];
+                    e.children[0].src ="./Images/cal2.png";
+                    e.classList.add('activeMonth')
+                    counter ++;
+                }
+                const goIn=  selectedMonths.filter(a => a!== "" ).join(", ");
+                go.innerText = goIn;
+                let ftTextArr = ["","","","","","",""]
+                for(let i =0; i< selectedMonths.length; i++){
+                  //if (selectedMonths[i]!== ""){
+                    ftTextArr[i] = selectedMonths[i].substring(0,3);
+                  
+                  let ftText =ftTextArr.filter(a => a!== "" ).join(", ");
+                  flexibleText.innerText =stayText.innerText + " in " + ftText;
+                }
+                
 
-// live anywhere
+            }
+        }
+    
+    });
+    
+});
+
+///////////////////// live anywhere - Helia
 
 
 const livePic = document.querySelector(".live-pic");
