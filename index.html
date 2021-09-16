@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adventure</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="Css/main.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link rel="stylesheet" href="jquery-date-range-picker/daterangepicker.css">
+
+    <link rel="stylesheet" href="Css/main.css" />
+    <title>Adventure</title>
+  
+  </head>
 
 <body>
 <div class="overlay"></div>
@@ -107,17 +114,17 @@
       
               </div>
               <!-- ------------------------------------ -->
-              <div class="check-in-container df onhover">
+              <div class="check-in-container df onhover click-calendar ">
                 <div class="check in">
                   <div class="txt-chin">Check in</div>
-                  <div class="add-dates">Add dates</div>
+                  <div class="add-dates addDatumIn">Add dates</div>
                 </div>
               </div>
               <!-- ------------------------------------ -->
-              <div class="check-out-container df onhover">
+              <div class="check-out-container df onhover click-calendar">
                 <div class="check out">
                   <div class="txt-chout">Check out</div>
-                  <div class="add-dates">Add dates</div>
+                  <div class="add-dates addDatumOut">Add dates</div>
                 </div>
               </div>
               <!-- ------------------------------------ -->
@@ -157,8 +164,8 @@
                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"><path d="m2 16h28m-14-14v28"></path></svg>
                    </button>
               </div>
-             </div>
-
+            </div>
+              
   <!-- ----- -->
   <div class="children">
     <div class="age df"  id="bordered">
@@ -200,6 +207,22 @@
 <!-- ------------------guest menu end----------------- -->
 
             </div>
+            <!-- ------CALENDAR--------------------->
+            <div class="container-calendar btn-default">
+              <div class="selection" role="tablist">
+                <div class="tab">
+                  <button class="btn-tab active click-calendar " role="button" id="dates" >Calender</button>
+                  <button class="btn-tab" tab-index="-1" role="button">I'm Flixieble</button>
+                </div>
+              </div>
+              <div class="btn-days">
+                <button class="btn-day">1 day</button>
+                <button class="btn-day">3 days</button>
+                <button class="btn-day">7 days</button>
+              </div>
+            </div>
+        <!-- ------CALENDAR------------------- -->
+
           </div>
           <div class="right-menu df">
             <div class="hostcontainer df">
@@ -287,7 +310,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Berlin</b>
-              <span class="caption">15 minute drive</span>
+              <span class="piccaption">15 minute drive</span>
             </span>
           </a>
         </div>
@@ -296,7 +319,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Hamburg</b>
-              <span class="caption">3.5 hour drive</span>
+              <span class="piccaption">3.5 hour drive</span>
             </span>
           </a>
         </div>
@@ -305,7 +328,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Cologne</b>
-              <span class="caption">6.5 hour drive</span>
+              <span class="piccaption">6.5 hour drive</span>
             </span>
           </a>
         </div>
@@ -314,7 +337,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">leipzig</b>
-              <span class="caption">2.5 hour drive</span>
+              <span class="piccaption">2.5 hour drive</span>
             </span>
           </a>
         </div>
@@ -323,7 +346,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Düsseldorf</b>
-              <span class="caption">6 hour drive</span>
+              <span class="piccaption">6 hour drive</span>
             </span>
           </a>
         </div>
@@ -332,7 +355,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Dresden</b>
-              <span class="caption">2.5 hour drive</span>
+              <span class="piccaption">2.5 hour drive</span>
             </span>
           </a>
         </div>
@@ -341,7 +364,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Nuremberg</b>
-              <span class="caption">2.5 hour drive</span>
+              <span class="piccaption">2.5 hour drive</span>
             </span>
           </a>
         </div>
@@ -350,7 +373,7 @@
             <div class="citypic"></div>
             <span class="citytxt">
               <b class="cname">Hanover</b>
-              <span class="caption">3.5 hour drive</span>
+              <span class="piccaption">3.5 hour drive</span>
             </span>
           </a>
         </div>
@@ -470,12 +493,12 @@
     <h1>Inspiration for future getaways</h1>
     <div class="distination">
       <div class="df distination__items">
-        <button class="btn art-btn active">Destinations for arts & culture</button>
-        <button class="btn outdoor">Destinations for outdoor adventure</button>
-        <button class="btn mountain">Mountain cabins</button>
-        <button class="btn beach">Beach destinations</button>
-        <button class="btn popular">Popular destinations</button>
-        <button class="btn unique">Unique Stays</button>
+        <button class="ins-btn art-btn active">Destinations for arts & culture</button>
+        <button class="ins-btn outdoor">Destinations for outdoor adventure</button>
+        <button class="ins-btn mountain">Mountain cabins</button>
+        <button class="ins-btn beach">Beach destinations</button>
+        <button class="ins-btn popular">Popular destinations</button>
+        <button class="ins-btn unique">Unique Stays</button>
       </div>
     </div>
     <div class="df art country ">
@@ -771,7 +794,7 @@
     </div>
   </footer>
   <!------------------------------------footer end samira------------------------------------>
-
+  <script type="text/javascript" src="jquery-date-range-picker/jquery.daterangepicker.js"></script>
   <script src="main.js"></script>
 </body>
 
