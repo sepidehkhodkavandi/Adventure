@@ -317,7 +317,6 @@ input:focus {
   -webkit-line-clamp: 2;
   font-weight: 600;
   overflow-wrap: break-word;
-  color: #717171;
 }
 
 .small-footer-text {
@@ -508,6 +507,11 @@ input:focus {
   align-items: center;
   background-color: #fff;
   cursor: pointer;
+  border: 1px solid #DDDDDD !important;
+}
+
+.sign-in-button:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .sign-in-logo {
