@@ -343,7 +343,14 @@ input:focus{
     -webkit-tap-highlight-color: transparent;
     color: rgb(34, 34, 34);
   }
-
+  .foo-link:hover {
+    svg{
+     color: rgb(255, 56, 92)
+    }
+    .small-footer-text{
+      color: rgb(34, 34, 34) !important;
+    }
+}
   .-graytext{
     font-size: 10px;
     line-height: 12px;
@@ -368,8 +375,8 @@ input:focus{
     -webkit-box-orient: vertical;
     font-weight: 600;
     overflow-wrap: break-word;
-  color: #000;
-padding-top: 5px;}
+    color:rgb(113, 113, 113); 
+    padding-top: 5px;}
 
 
 .logo {

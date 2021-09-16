@@ -321,12 +321,15 @@ fsvg.forEach((svg, index) => {
   svg.addEventListener("click", () => {
     svg.classList.remove("grayColor");
     svg.classList.add("redColor");
+    $(".small-footer-text").eq(index).css("color", "black")
 
     fsvg.forEach((item, i) => {
 
       if (i != index && item.classList.contains("redColor")) {
         item.classList.remove("redColor");
         item.classList.add("grayColor");
+        $(".small-footer-text").eq(i).css("color", "#717171")
+
       }
 
     });
@@ -375,8 +378,6 @@ plusButton.forEach((item, index) => {
     let seconditem = Number($(".counterp").eq(1).text());
     let infantcounter = Number($(".counterp").eq(2).text());
     let str = firstitem + seconditem;
-    // $(".circle-close").css("opacity", "1");
-    // $(".search-close").css("opacity", "1");
     $(".circle-close").css("display", "flex");
     $(".search-close").css("display", "flex");
     $(".add-dates-s").css("color", "#222222");
@@ -518,8 +519,6 @@ $(".guest").click(function () {
     }
 
     if ($(".add-dates-s").text() != "Add guests") {
-      // $(".circle-close").css("opacity", "1");
-      //$(".search-close").css("opacity", "1");
       $(".circle-close").css("display", "flex");
       $(".search-close").css("display", "flex");
       $(".add-dates-s").addClass("addellipsis");
@@ -561,8 +560,8 @@ $(".type-location").click(function () {
     $(".searchAppear").css("display", "block");
     $(".location-container").addClass("clickeffect");
     if (guestMenu.style.display == "block" || profilemenu.style.display == "block") {
-      profilemenu.style.display = "none";
-      guestMenu.style.display = "none";
+        profilemenu.style.display = "none";
+        guestMenu.style.display = "none";
     }
 
   }
@@ -624,8 +623,6 @@ $(document).click(function (event) {
     $(".search-button").removeClass("increaseWidth");
     $(".search-button").removeClass("searchclass");
     $(".guest-container").removeClass("clickeffect");
-    //$(".circle-close").css("opacity", "0");
-    //$(".search-close").css("opacity", "0");
     $(".circle-close").css("display", "none");
     $(".search-close").css("display", "none");
     $(".location-container").removeClass("clickeffect");
@@ -647,7 +644,6 @@ $(".small-size-header").click(function () {
 $(".mobile-size-button").click(function () {
   $(".small-size-header").css("display", "flex");
   $(".mobile-top-menu").css("display", "none");
-  //$(".small-size-footer").css("display" , "none");
 
 })
 
@@ -658,7 +654,9 @@ $(".guest").on({
     $(".check-out-container").addClass("removeafter");
   },
   mouseleave: function () {
+    if(guestMenu.style.display != "block"){
     $(".check-out-container").removeClass("removeafter");
+    }
   }
 });
 // ---checkIn---
@@ -677,7 +675,9 @@ $(".check-in-container").on({
     $(".location-container").addClass("removeafter");
   },
   mouseleave: function () {
+    if(locationMenu.style.display != "block"){
     $(".location-container").removeClass("removeafter");
+    }
   }
 });
 
