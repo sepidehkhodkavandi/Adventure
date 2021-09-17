@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: bookAirbnb;
+  //font-family: bookAirbnb;
 }
 html {
   scroll-behavior: smooth;
@@ -176,12 +176,17 @@ $xxxsmallDevice :375px;
     position: fixed;
     z-index: 500;
   }
+  .where::-webkit-input-placeholder {
+    font-family: bookAirbnb;
+    font-size: 14px;
+}
 
   .mobile-size-button{
     background-color: white;
     border: none;
     cursor: pointer;
     padding-left: 24px;
+    font-family: regular;
     
   }
     .mobile-size-input {
@@ -190,6 +195,8 @@ $xxxsmallDevice :375px;
       color: #717171;
       padding-left: 18px;
     }
+  
+
     .tinpmobile{
       margin-left: 20px;
     }
@@ -308,7 +315,7 @@ input:focus{
 
 
 .small-size-footer{
-  -webkit-box-align: center;
+    -webkit-box-align: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
     border-top: 1px solid rgb(221, 221, 221);
@@ -319,6 +326,7 @@ input:focus{
     position: fixed;
     right: 0px;
     z-index: 101;
+    font-family: bookAirbnb;
     //transition: -ms-transform 0.2s cubic-bezier(0, 0, 0.1, 1) 0s, -webkit-transform 0.2s cubic-bezier(0, 0, 0.1, 1) 0s, transform 0.2s cubic-bezier(0, 0, 0.1, 1) 0s, visibility 0s ease 0s !important;
     transition: -ms-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, visibility 0.2s ease 0s !important;
     display: none;
@@ -645,7 +653,6 @@ input:focus{
   outline: none !important;
   color: #717171 !important;
   background-color: transparent !important;
-  font-family: inherit !important;
   font-size: 16px !important;
   font-weight: 400 !important;
   line-height: 20px !important;
@@ -654,6 +661,7 @@ input:focus{
   padding-right: 36px !important;
   margin-left: 18px;
   margin-right: 36px;
+  font-family: bookAirbnb;
 }
 .mobile-headercontainer{
   display: flex;
@@ -938,7 +946,8 @@ input:focus{
 .hero-question {
   color: #222222;
   font-size: 18px;
-  font-family: boldfont;
+  font-family: bookAirbnb;
+  font-weight: 600;
 }
 
 .hero-text {
@@ -1001,7 +1010,7 @@ input:focus{
   background: linear-gradient(90deg, #6f019c 0%, #c6017e 135.12%);
   -webkit-background-clip: text;
   background-clip: text;
-  font-family: regular;
+  font-family: boldfont;
   font-weight: 800;
   line-height: 20px;
   max-height: 120px;
@@ -1072,8 +1081,9 @@ input:focus{
   margin-left: 20px;
   font-size: 14px !important;
   line-height: 18px !important;
-  font-weight: 600 !important;
+  //font-weight: 600 !important;
   display: none;
+  font-family: regular;
 }
 
 .searchsvg {
@@ -1110,7 +1120,7 @@ input:focus{
   margin-bottom: 24px;
   padding-right: 80px;
   padding-left: 80px;
-  font-weight: 800;
+  //font-weight: 800;
   line-height: 52px;
   width: 100%;
   max-width: 1760px;
@@ -1137,7 +1147,7 @@ input:focus{
     //padding-bottom: 16px;
     font-size: 32px;
     color: #222222;
-    font-family: boldfont;
+    font-family: boldfont !important;
     padding-left: 8px;
     font-weight: 700;
     @include largeDevice() {
@@ -1279,6 +1289,8 @@ input:focus{
   overflow: hidden;
   white-space: nowrap;
   padding-bottom: 2px;
+  font-family: bookAirbnb !important; 
+
 }
 
 .cname {
@@ -1288,6 +1300,7 @@ input:focus{
   white-space: nowrap;
   padding-bottom: 2px;
   font-family: boldfont;
+  font-weight: 600;
 }
 
 .citytxt {
@@ -1295,15 +1308,15 @@ input:focus{
   display: flex;
   flex-wrap: wrap;
   overflow-x: hidden;
-  font-family: regular;
-  font-weight: 400;
+  //font-family: regular;
+  //font-weight: 400;
 }
 
 
 // -------------------------------end main one sepideh
 .profilemenu {
   width: 240px;
-  height: 243px;
+  height: 255px;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   position: absolute;
@@ -1312,13 +1325,15 @@ input:focus{
   z-index: 500;
   padding: 10px;
   display: none;
+  font-family: bookAirbnb;
 }
 .up {
   border-bottom: #dddddd solid 1px;
   margin-left: -10px;
   margin-right: -10px;
   .sin {
-    font-weight: 600;
+    //font-weight: 600;
+    font-family: regular;
   }
 }
 .up,
@@ -1328,7 +1343,7 @@ input:focus{
     color: #000;
     text-decoration: none;
     font-size: 14px;
-    font-family: regular;
+   // font-family: regular;
     margin: 15px;
   }
 }
@@ -1361,8 +1376,9 @@ input:focus{
       text-transform: uppercase ;
       font-size: 12px;
       line-height: 12px ;
-      font-weight: 800 ;
-      padding: 18px 32px 16px 12px !important
+      //font-weight: 800 ;
+      padding: 18px 32px 16px 12px !important;
+      font-family: regular;
     } 
     .purple-text{
       -webkit-text-fill-color: transparent !important;
@@ -1371,6 +1387,7 @@ input:focus{
       background-clip: text;
       font-size: 18px;
           font-weight: 800;
+          font-family: boldfont;
       
       }
 
@@ -1526,11 +1543,13 @@ input:focus{
       line-height: 18px !important;
       font-weight: 400 !important;
       color: rgb(113, 113, 113) !important;
+      font-family: bookAirbnb;
     }
     .bold-adults{
       font-size: 16px !important;
         line-height: 20px !important;
-        font-weight: 600 !important;
+        //font-weight: 600 !important;
+        font-family: regular;
     }
     .pointer{
       cursor: pointer;
@@ -1807,8 +1826,8 @@ color: rgb(34, 34, 34) !important;
 
     p {
       font-family: regular;
-      color: rgb(34, 34, 34);
-      font-size: 20px;
+      color: rgb(34, 34, 34) !important;
+      font-size: 18px;
       padding-top: 8px;
       @include smallDevice(){
         font-size: 18px !important;
@@ -2061,8 +2080,9 @@ color: rgb(34, 34, 34) !important;
 
     h5 {
       font-family: regular;
+      font-weight: 400;
       color: rgb(34, 34, 34);
-      font-size: 20px;
+      font-size: 18px;
       padding-top: 8px;
       @include smallDevice(){
         font-size: 18px !important;
@@ -2072,8 +2092,8 @@ color: rgb(34, 34, 34) !important;
     }
 
     p {
-      font-family: regular;
-      color:rgb(113, 113, 113);
+      font-family: bookAirbnb;
+      color: #222222;
       margin-top: 4px;
       font-size: 14px;
       line-height: 18px;
@@ -2104,7 +2124,7 @@ color: rgb(34, 34, 34) !important;
 //start-inspiration//samira--------------------------------------
 
 .container__inspiration {
-  font-family: 'regular';
+  font-family: bookAirbnb !important;
   padding: 0 5em;
   font-size: 0.875;
 
@@ -2296,7 +2316,7 @@ color: rgb(34, 34, 34) !important;
 .footer {
   background-color: rgb(247, 247, 247);
   border-top: 1px solid rgb(221, 221, 221);
-  font-family: regular;
+  font-family: bookAirbnb;
 
   a {
     text-decoration: none;

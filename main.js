@@ -227,9 +227,25 @@ const checkOut = document.querySelector('.check-out-container')
 const calenderF = function () {
   document.querySelector('.container-calendar').classList.toggle('showCalendar')
 }
+
 checkIn.addEventListener('click', calenderF)
 checkOut.addEventListener('click', calenderF)
 
+
+// $(".check-in-container").click(function () {
+//   $(".check-in-container").addClass("clickeffect");
+//   $(".location-container").addClass("removeafter");
+//   $(".check-in-container").addClass("removeafter");
+//   $(".whitemenu").css("background" , "rgb(247, 247, 247");
+
+
+// })
+// $(".check-out-container").click(function () {
+//   $(".check-out-container").addClass("clickeffect");
+//   $(".check-in-container").addClass("removeafter");
+//   $(".check-out-container").addClass("removeafter");
+//   $(".whitemenu").css("background" , "rgb(247, 247, 247");
+// })
 $("#dates")
   .dateRangePicker({
     format: "MMM DD",
@@ -355,6 +371,7 @@ let counterP = document.querySelectorAll(".counterp");
 let age = document.querySelectorAll(".age");
 let guestContainer = document.querySelector(".geust-container");
 let searchClose = document.querySelector(".search-close");
+let containerCalendar = document.querySelector(".container-calendar")
 
 //to change the styles of minus button
 $(".minus-button").addClass("ct");
@@ -491,7 +508,7 @@ minusButton.forEach((item, index) => {
   });
 });
 
-$(".guest-container").click(function () {
+$(".guest").click(function () {
   if (window.innerWidth >= 950) {
   $(".guest-container").addClass("clickeffect");
   $(".searchAppear").css("display", "block");
@@ -507,16 +524,20 @@ $(".guest-container").click(function () {
 $(".guest").click(function () {
   if (guestMenu.style.display == "block") {
     guestMenu.style.display = "none";
+    $(".whitemenu").css("background" , "white");
     $(".circle-close").css("display", "none");
     $(".search-close").css("display", "none");
     $("add-dates-s").css("textOoverflow", "unset");
   } else {
     guestMenu.style.display = "block";
     $(".check-out-container").addClass("removeafter");
+    $(".guest-container").addClass("clickeffect");
+    $(".whitemenu").css("background" , "rgb(247, 247, 247");
     if (locationMenu.style.display == "block" || profilemenu.style.display == "block") {
       locationMenu.style.display = "none";
       profilemenu.style.display = "none";
       guestMenu.style.display = "block";
+      $(".whitemenu").css("background" , "rgb(247, 247, 247");
       $(".check-out-container").addClass("removeafter");
     }
 
@@ -527,6 +548,8 @@ $(".guest").click(function () {
       // $(".guest-container").addClass("clickeffect");
       guestMenu.style.display = "block";
       $(".check-out-container").addClass("removeafter");
+        //$(".guest-container").css("background" , "white");
+
 
 
     }
@@ -545,21 +568,24 @@ $(".circle-close").click(function () {
 })
 
 //click on location input
-$(".type-location").click(function () {
+$(".location").click(function () {
   if (locationMenu.style.display == "block") {
     locationMenu.style.display = "none";
+    $(".whitemenu").css("background" , "white");
     $(".location-container").removeClass("clickeffect");
     $(".location-container").removeClass("removeafter");
 
-
-
   } else {
     locationMenu.style.display = "block";
+    $(".whitemenu").css("background" , "rgb(247, 247, 247");
     $(".location-container").addClass("removeafter");
+    if(window.innerWidth > 950){
     $(".search-button").addClass("searchclass");
     $(".search-button").addClass("exapnded-search");
     $(".search-button").addClass("increaseWidth");
     $(".searchAppear").css("display", "block");
+
+    }
     $(".location-container").addClass("clickeffect");
     if (guestMenu.style.display == "block" || profilemenu.style.display == "block") {
         profilemenu.style.display = "none";
@@ -584,23 +610,31 @@ $(".sign-in-button").click(function () {
       $(".search-button").removeClass("increaseWidth");
       $(".location-container").removeClass("clickeffect");
       $(".guest-container").removeClass("clickeffect");
-
-
     }
   }
 });
 //click on circular search button
-$(".search-button").click(function () {
-  if (guestMenu.style.display == "block") { $(".guest-menu").css("display", "none") }
+$("#srch").click(function () {
+  if (guestMenu.style.display == "block") { 
+    $(".guest-menu").css("display", "none")
+    $(".whitemenu").css("background" , "white");
+   }
   if (window.innerWidth >= 950) {
   $(".searchAppear").css("display", "block");
   $(".search-button").addClass("increaseWidth");
   $(".search-button").addClass("searchclass");
   $(".search-button").addClass("exapnded-search");
-  }
-  $(".location-input-menu").css("display", "block");
   $(".guest-container").removeClass("clickeffect");
-  $(".location-container").addClass("clickeffect");
+  $(".whitemenu").css("background" , "rgb(247, 247, 247");
+   }
+   $(".location-input-menu").css("display", "block");
+   $(".guest-container").removeClass("clickeffect");
+   $(".location-container").addClass("clickeffect");
+   $(".location-container").addClass("removeafter");  
+   $(".whitemenu").css("background" , "rgb(247, 247, 247");
+
+
+
 });
 //click on anywhere in the document except the ones mentioned in the if condition
 $(document).click(function (event) {
@@ -615,7 +649,8 @@ $(document).click(function (event) {
     !$(event.target).closest(minusButton).length &&
     !$(event.target).closest(age).length &&
     !$(event.target).closest(guestContainer).length &&
-    !$(event.target).closest(searchClose).length) {
+    !$(event.target).closest(searchClose).length )
+     {
     profilemenu.style.display = "none";
     locationMenu.style.display = "none";
     $(".location-container").removeClass("removeafter");
@@ -628,6 +663,11 @@ $(document).click(function (event) {
     $(".search-close").css("display", "none");
     $(".location-container").removeClass("clickeffect");
     $(".add-dates-s").removeClass("addellipsis");
+    //checkOut.classList.remove("clickeffect");
+    //checkIn.classList.remove("clickeffect");
+    $(".whitemenu").css("background" , "white");
+
+
 
 
   }
