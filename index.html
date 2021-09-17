@@ -114,11 +114,12 @@
       
               </div>
               <!-- ------------------------------------ -->
-              <div class="check-in-container df onhover click-calendar ">
+              <div class="check-in-container df onhover click-calendar">
                 <div class="check in">
                   <div class="txt-chin">Check in</div>
                   <div class="add-dates addDatumIn">Add dates</div>
                 </div>
+                
               </div>
               <!-- ------------------------------------ -->
               <div class="check-out-container df onhover click-calendar">
@@ -126,6 +127,7 @@
                   <div class="txt-chout">Check out</div>
                   <div class="add-dates addDatumOut">Add dates</div>
                 </div>
+                <button id="circle"><span class="close2"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path d="m6 6 20 20"></path><path d="m26 6-20 20"></path></svg></span></button>
               </div>
               <!-- ------------------------------------ -->
               <div class="guest-container df">
@@ -208,18 +210,14 @@
 
             </div>
             <!-- ------CALENDAR--------------------->
-            <div class="container-calendar btn-default">
+            <div class="container-calendar ">
               <div class="selection" role="tablist">
                 <div class="tab">
-                  <button class="btn-tab active click-calendar " role="button" id="dates" >Calender</button>
-                  <button class="btn-tab" id="flexibleBtn" tab-index="-1" role="button">I'm Flixieble</button>
+                  <button class="btn-tab bgw " role="button" id="dates" >Calendar</button>
+                  <button class="btn-tab" id="flexibleBtn" role="button">I'm Flixieble</button>
                 </div>
               </div>
-              <div class="btn-days">
-                <button class="btn-day">1 day</button>
-                <button class="btn-day">3 days</button>
-                <button class="btn-day">7 days</button>
-              </div>
+             
               <div class="imflexible-container">
                 <div class="stay">
                     <div class="fc-d1">
@@ -266,7 +264,17 @@
         
                 </div>
                 
-            </div>
+             </div>
+             <div class="wrapper-calendar">
+              <div class="btn-days">
+                <button class="btn-day"><span class="svg-span">&#177;  </span>
+                  1 day</button>
+                         
+                <button class="btn-day"><span class="svg-span">&#177;</span> 3 days</button>
+
+                <button class="btn-day"> <span class="svg-span">&#177;</span> 7 days</button>
+              </div>
+             </div>
             </div>
         <!-- ------CALENDAR------------------- -->
 
@@ -540,7 +548,7 @@
     <h1>Inspiration for future getaways</h1>
     <div class="distination">
       <div class="df distination__items">
-        <button class="ins-btn art-btn active">Destinations for arts & culture</button>
+        <button class="ins-btn art-btn">Destinations for arts & culture</button>
         <button class="ins-btn outdoor">Destinations for outdoor adventure</button>
         <button class="ins-btn mountain">Mountain cabins</button>
         <button class="ins-btn beach">Beach destinations</button>
@@ -743,7 +751,7 @@
   </div>
   <!------------------------------------Inspiration end samira------------------------------------>
   <!------------------------------------footer start samira------------------------------------>
-  <footer class="footer">
+  <footer class="footer-main">
     <div class="footer__container">
       <div class="footer__links">
         <div class="footer__links--column">

@@ -39,50 +39,50 @@ function scrollFunction() {
     document.querySelector('.host').classList.add("rmenuScrollHover");
     document.querySelector(".language").classList.add("rmenuScrollHover");
     ////////////////////open menu
-    const openMenu = function(){
-        document.querySelector('.overlay').style.display = "block";
-        document.querySelector('.whitemenu').classList.remove('whiteActive');
-        document.querySelector('.search-button').classList.remove('searchBtnActive');
-        document.querySelector('.searchsvg').classList.remove('searchsvgActive');
-        document.querySelector('.center').style.display ="flex";
-        document.querySelector('.location-container').style.display= "flex";
-        document.querySelector('.check-in-container').style.display= "flex";
-        document.querySelector('.check-out-container').style.display= "flex";
-        document.querySelector('.whitemenuText').style.display="none";
-        document.querySelector('.guest').style.display= "block";
-        document.querySelector('.centerheader').classList.remove("centerScroll");
-        document.querySelector('.guest-container').classList.remove('removeHover');
-        document.querySelectorAll('.clink').forEach(function(link) {
-          link.style.color= "#000000";
-        });
-        document.querySelector('.places').classList.add('placesBlack');
-        document.querySelector('.exp').classList.add('expBlack');
-        document.querySelector('.onlineexp').classList.add('onlineexpBlack');
-        document.querySelector('.headermenu').classList.add('headerScroll');
-        }
+    const openMenu = function () {
+      document.querySelector('.overlay').style.display = "block";
+      document.querySelector('.whitemenu').classList.remove('whiteActive');
+      document.querySelector('.search-button').classList.remove('searchBtnActive');
+      document.querySelector('.searchsvg').classList.remove('searchsvgActive');
+      document.querySelector('.center').style.display = "flex";
+      document.querySelector('.location-container').style.display = "flex";
+      document.querySelector('.check-in-container').style.display = "flex";
+      document.querySelector('.check-out-container').style.display = "flex";
+      document.querySelector('.whitemenuText').style.display = "none";
+      document.querySelector('.guest').style.display = "block";
+      document.querySelector('.centerheader').classList.remove("centerScroll");
+      document.querySelector('.guest-container').classList.remove('removeHover');
+      document.querySelectorAll('.clink').forEach(function (link) {
+        link.style.color = "#000000";
+      });
+      document.querySelector('.places').classList.add('placesBlack');
+      document.querySelector('.exp').classList.add('expBlack');
+      document.querySelector('.onlineexp').classList.add('onlineexpBlack');
+      document.querySelector('.headermenu').classList.add('headerScroll');
+    }
     document.querySelector('.whitemenu').addEventListener('click', openMenu);
     const header0 = document.querySelector('#header0');
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (event.target == header0) {
         document.querySelector('.whitemenu').classList.add('whiteActive');
         document.querySelector('.search-button').classList.add('searchBtnActive');
         document.querySelector('.searchsvg').classList.add('searchsvgActive');
         document.querySelector('.guest-container').classList.add('removeHover');
-        document.querySelector('.center').style.display ="none";
-        document.querySelector('.location-container').style.display= "none";
-        document.querySelector('.check-in-container').style.display= "none";
-        document.querySelector('.check-out-container').style.display= "none";
-        document.querySelector('.guest').style.display= "none";
+        document.querySelector('.center').style.display = "none";
+        document.querySelector('.location-container').style.display = "none";
+        document.querySelector('.check-in-container').style.display = "none";
+        document.querySelector('.check-out-container').style.display = "none";
+        document.querySelector('.guest').style.display = "none";
         document.querySelector(".host").style.color = "#000";
         document.querySelector('.headermenu').classList.remove('headerScroll');
         document.querySelector('.centerheader').classList.add("centerScroll");
-        document.querySelector('.whitemenuText').style.display="block";
+        document.querySelector('.whitemenuText').style.display = "block";
         document.querySelector('.overlay').style.display = "none";
       }
     }
-    
-  } else  {
-    header.style.backgroundColor = "unset" ;
+
+  } else {
+    header.style.backgroundColor = "unset";
     document.querySelector('.overlay').style.display = "none";
     header.classList.remove('active');
     document.querySelector(".host").style.color = "#fff";
@@ -96,14 +96,14 @@ function scrollFunction() {
     document.querySelector('.searchsvg').classList.remove('searchsvgActive');
     document.querySelector('.guest-container').classList.remove('removeHover');
 
-    document.querySelector('.center').style.display ="flex";
-    document.querySelector('.location-container').style.display= "flex";
-    document.querySelector('.check-in-container').style.display= "flex";
-    document.querySelector('.check-out-container').style.display= "flex";
-    document.querySelector('.whitemenuText').style.display="none";
-    document.querySelector('.guest').style.display= "block";
-    document.querySelectorAll('.clink').forEach(function(link) {
-      link.style.color= "#ffff";
+    document.querySelector('.center').style.display = "flex";
+    document.querySelector('.location-container').style.display = "flex";
+    document.querySelector('.check-in-container').style.display = "flex";
+    document.querySelector('.check-out-container').style.display = "flex";
+    document.querySelector('.whitemenuText').style.display = "none";
+    document.querySelector('.guest').style.display = "block";
+    document.querySelectorAll('.clink').forEach(function (link) {
+      link.style.color = "#ffff";
     });
     document.querySelector('.places').classList.remove('placesBlack');
     document.querySelector('.exp').classList.remove('expBlack');
@@ -115,6 +115,10 @@ function scrollFunction() {
 }
 
 //////////////// flexible calendar - Helia//////////////////////////
+const wrapperCalendar = document.querySelector('.wrapper-calendar')
+const tabCalendar = document.querySelector('#dates')
+
+
 const flexBtn = document.querySelector('#flexibleBtn');
 const flexCalender = document.querySelector('.imflexible-container');
 let stayText = document.querySelector('.stay-txt');
@@ -122,59 +126,82 @@ const stayButton = document.querySelectorAll('.stay-btn');
 const months = document.querySelectorAll('.flexibleMonth');
 const monthBtn = document.querySelectorAll('.fc-goin-btn');
 const go = document.querySelector('.go');
-const flexibleText = document.querySelector('.addDatumIn'); 
+const flexibleText = document.querySelector('.addDatumIn');
 let flexTxt1 = "weekend";
 let flexTxt2 = "sep, oct";
-flexBtn.addEventListener('click',  function(){
-    flexCalender.classList.toggle('flexActive');
-    document.querySelector('#dates').style.backgroundColor = "unset";
-    document.querySelector(".check-out-container").style.display="none";
-    document.querySelector('.txt-chin').innerHTML = "Flexible dates";
-    flexibleText.innerText = flexTxt1 + " in " + flexTxt2;
+flexBtn.addEventListener('click', function () {
+  this.classList.add('bgw')
+  tabCalendar.classList.remove('bgw')
+  flexCalender.style.display = 'block';
+  wrapperCalendar.style.display = 'none'
+  document.querySelector('.btn-days').style.display = 'none'
+
+  document.querySelector(".check-out-container").style.display = "none";
+  document.querySelector('.txt-chin').innerHTML = "Flexible dates";
+  flexibleText.innerText = flexTxt1 + " in " + flexTxt2;
 });
+
+
+tabCalendar.addEventListener('click', function () {
+  this.classList.add('bgw')
+  flexBtn.classList.remove('bgw')
+
+  wrapperCalendar.style.display = 'block'
+  flexCalender.style.display = 'none';
+  document.querySelector('.txt-chin').innerHTML = "Check in";
+  document.querySelector('.add-dates').innerHTML = "Add dates";
+
+
+  document.querySelector(".check-out-container").style.display = "block";
+
+})
+
+
+
+
 //set "stay for" section - Helia
-stayButton.forEach(function(e){
- e.addEventListener('click', function() {
+stayButton.forEach(function (e) {
+  e.addEventListener('click', function () {
     stayText.innerText = e.textContent;
     e.classList.toggle("stayBtnActive");
-    flexibleText.innerText =stayText.innerText + " in " + flexTxt2;
- });
+    flexibleText.innerText = stayText.innerText + " in " + flexTxt2;
+  });
 });
-const monthsArr= ["September", 'October', "November", "December", "January", "February"]
-const selectedMonths = ["September", 'October',"","","",""]
+const monthsArr = ["September", 'October', "November", "December", "January", "February"]
+const selectedMonths = ["September", 'October', "", "", "", ""]
 let counter = 2;
 monthBtn.forEach(function (e) {
-    e.addEventListener('click', function () {
-        for (let i = 0; i < monthsArr.length; i++) {
-            if(monthsArr[i] == e.children[1].innerHTML){
-                if(monthsArr[i] == selectedMonths[i] && counter>1){
-                    selectedMonths[i]="";
-                    e.children[0].src ="./Images/cal1.png";
-                    e.classList.remove('activeMonth')
-                    counter --;
-                }else if(monthsArr[i] !== selectedMonths[i]){
-                    selectedMonths[i]=monthsArr[i];
-                    e.children[0].src ="./Images/cal2.png";
-                    e.classList.add('activeMonth')
-                    counter ++;
-                }
-                const goIn=  selectedMonths.filter(a => a!== "" ).join(", ");
-                go.innerText = goIn;
-                let ftTextArr = ["","","","","","",""]
-                for(let i =0; i< selectedMonths.length; i++){
-                  //if (selectedMonths[i]!== ""){
-                    ftTextArr[i] = selectedMonths[i].substring(0,3);
-                  
-                  let ftText =ftTextArr.filter(a => a!== "" ).join(", ");
-                  flexibleText.innerText =stayText.innerText + " in " + ftText;
-                }
-                
-
-            }
+  e.addEventListener('click', function () {
+    for (let i = 0; i < monthsArr.length; i++) {
+      if (monthsArr[i] == e.children[1].innerHTML) {
+        if (monthsArr[i] == selectedMonths[i] && counter > 1) {
+          selectedMonths[i] = "";
+          e.children[0].src = "./Images/cal1.png";
+          e.classList.remove('activeMonth')
+          counter--;
+        } else if (monthsArr[i] !== selectedMonths[i]) {
+          selectedMonths[i] = monthsArr[i];
+          e.children[0].src = "./Images/cal2.png";
+          e.classList.add('activeMonth')
+          counter++;
         }
-    
-    });
-    
+        const goIn = selectedMonths.filter(a => a !== "").join(", ");
+        go.innerText = goIn;
+        let ftTextArr = ["", "", "", "", "", "", ""]
+        for (let i = 0; i < selectedMonths.length; i++) {
+          //if (selectedMonths[i]!== ""){
+          ftTextArr[i] = selectedMonths[i].substring(0, 3);
+
+          let ftText = ftTextArr.filter(a => a !== "").join(", ");
+          flexibleText.innerText = stayText.innerText + " in " + ftText;
+        }
+
+
+      }
+    }
+
+  });
+
 });
 
 ///////////////////// live anywhere - Helia
@@ -223,91 +250,152 @@ document.addEventListener("scroll", function () { // or window.addEventListener(
 // the function to open check in/check out
 const checkIn = document.querySelector('.check-in-container')
 const checkOut = document.querySelector('.check-out-container')
+const calendarWrapper = document.querySelector('.month-wrapper')
+const btnDay = document.querySelector('.btn-days')
+
+
+
 
 const calenderF = function () {
-  document.querySelector('.container-calendar').classList.toggle('showCalendar')
-}
-checkIn.addEventListener('click', calenderF)
-checkOut.addEventListener('click', calenderF)
 
-$("#dates")
+  document.querySelector('.container-calendar').classList.toggle('showCalendar');
+  tabCalendar.classList.toggle('calendarWrapper');
+  // tabCalendar.click()
+}
+checkIn.addEventListener('click', function () {
+  this.classList.add('sh-btn')
+  checkOut.classList.remove('sh-btn')
+  calenderF()
+})
+
+checkOut.addEventListener('click', function () {
+  this.classList.add('sh-btn')
+
+  checkIn.classList.remove('sh-btn')
+  calenderF()
+})
+
+
+// function plusMinus(e) {
+//   AddDates.forEach(function (elm) {
+//     elm.innerHTML = e
+//     console.log(elm.innerHTML)
+//   })
+
+// }
+
+
+$(".click-calendar")
   .dateRangePicker({
+
     format: "MMM DD",
     // inline: true,
-    container: '.container-calendar ',
-    stickyMonths: true,
-    // alwaysOpen: true
+    container: '.wrapper-calendar ',
+    alwaysOpen: true
+
   })
   .on("datepicker-first-date-selected", function (event, obj) {
     /* This event will be triggered when first date is selected */
     $(".addDatumIn").text(moment(obj.date1).format("MMM DD"));
-
-    // $(".check-in-container").addClass("clickeffect");
-    // $(".check-in-container").addClass(".circle-close");
-
-
+    // $(".check-in-container").removeClass('.sh-btn')
+    checkIn.classList.remove('sh-btn')
+    checkOut.classList.add('sh-btn')
 
   })
   .on("datepicker-change", function (event, obj) {
     /* This event will be triggered when second date is selected */
-    console.log("change", obj);
+    // console.log("change", obj);
     $(".addDatumOut").text(moment(obj.date2).format("MMM DD"));
-    // $(".check-out-container").addClass("clickeffect");
-    // $(".check-in-container").addClass(".circle-close");
+    btnDay.style.display = 'flex';
+
+    $(".close2").css("display", "flex");
+    $("#circle").css("display", "flex");
+    checkIn.classList.add('sh-btn')
+    checkOut.classList.remove('sh-btn')
+    event.preventDefault();
+    const childBtnDay = document.querySelectorAll('.btn-day')
+    const AddDates = document.querySelectorAll('.add-dates')
+
+
+
+
+
+    let indate = $('.add-dates').eq(0).text()
+    let outdate = $('.add-dates').eq(1).text()
+    let x = $('.svg-span').eq(0).text()
+
+
+    childBtnDay.forEach(function (element, index) {
+      element.addEventListener('click', function () {
+
+
+        if (index == 0) {
+          $('.add-dates').eq(0).text(indate + ' ' + x + ' ' + 1)
+          $('.add-dates').eq(1).text(outdate + ' ' + x + ' ' + 1)
+        }
+
+        else if (index == 1) {
+          $('.add-dates').eq(0).text(indate + ' ' + x + ' ' + 3)
+          $('.add-dates').eq(1).text(outdate + ' ' + x + ' ' + 3)
+        }
+
+        else if (index == 2) {
+          $('.add-dates').eq(0).text(indate + ' ' + x + ' ' + 7)
+          $('.add-dates').eq(1).text(outdate + ' ' + x + ' ' + 7)
+        }
+
+      })
+    })
   })
-  // .on("datepicker-apply", function (event, obj) {
-  //   /* This event will be triggered when user clicks on the apply button */
-  //   console.log("apply", obj);
-  // })
-  // .on("datepicker-close", function () {
-  //   /* This event will be triggered before date range picker close animation */
-  //   console.log("before close");
-  // })
-  // .on("datepicker-closed", function () {
-  //   /* This event will be triggered after date range picker close animation */
-  //   console.log("after close");
-  // })
-  .on("datepicker-open", function () {
-    let boo = $("<div/>").appendTo("button.tab-btn");
-    console.log(boo)
-
-  })
-
-
 // ---------------------------Tab Inspiration---------------samira----------------------
 
 let country = document.querySelectorAll(".country")
 let btn = document.querySelectorAll(".ins-btn")
 let box = document.querySelector(".country__items")
+
 btn.forEach((item, index) => {
-  item.addEventListener("click", () => {
+  item.addEventListener("click", function () {
+
+    btn.forEach(function (x) {
+      if (x == item) {
+        x.classList.add("addAfter");
+      } else {
+        x.classList.remove("addAfter");
+      }
+    })
+
+
+
+
     if (btn[index].classList.contains("active")) {
       btn[index].classList.remove("active")
+
 
       country[index].style.display = "none"
       box.classList.remove("move")
       item.style.fontWeight = "400"
+
     } else {
       item.style.fontWeight = "700"
       country[index].style.display = "flex"
       box.classList.add("move")
 
 
-
       country.forEach((itemCountry, i) => {
         if (i != index) {
           itemCountry.style.display = "none"
+          // item.classList.remove('addAfter')
           btn[i].classList.remove("active")
           btn[i].style.fontWeight = "400"
+
         }
       })
 
       btn[index].classList.add("active")
-      btn[index].classList.add("removeafter")
+
     }
   })
 })
-
 
 // -------------------------samira----------------------//
 
