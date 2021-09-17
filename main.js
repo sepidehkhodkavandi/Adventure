@@ -678,7 +678,7 @@ $(".sign-in-button").click(function () {
   }
 });
 //click on circular search button
-$("#srch").click(function () {
+$(".search-button").click(function () {
   if (guestMenu.style.display == "block") { 
     $(".guest-menu").css("display", "none")
     $(".whitemenu").css("background" , "white");
@@ -740,7 +740,7 @@ $(document).click(function (event) {
 });
 
 //click on small-size-header
-$(".small-size-header").click(function () {
+  $(".small-size-header").click(function () {
   $(".mobile-top-menu").css("display", "block");
   $(".small-size-header").css("display", "none");
   $(".small-size-footer").css("display", "block");
@@ -748,7 +748,7 @@ $(".small-size-header").click(function () {
 
 })
 
-$(".mobile-size-button").click(function () {
+  $(".mobile-size-button").click(function () {
   $(".small-size-header").css("display", "flex");
   $(".mobile-top-menu").css("display", "none");
 
