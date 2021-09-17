@@ -1,6 +1,42 @@
+//experinces - Helia
+const exp = document.querySelector('.exp');
+const places = document.querySelector('.places');
+exp.addEventListener('click', function(){
+  document.querySelector(".checkBigContainer").style.display= "none";
+  document.querySelector('.guest-container').style.display = "none";
+  document.querySelector(".exp-date").style.display="flex";
+  $(".location-container").addClass("changeflex");
+  exp.classList.add("scale");
+  places.classList.add("pscale");
+ // $(".search-button").addClass
+
+});
+
+places.addEventListener('click', function(){
+  document.querySelector(".checkBigContainer").style.display= "flex";
+  document.querySelector(".exp-date").style.display="none";
+  $(".location-container").removeClass("changeflex");
+  document.querySelector('.guest-container').style.display = "flex";
+  exp.classList.remove("scale");
+  places.classList.remove("pscale");
+  places.classList.add("scale");
+  //places.classList.remove();
+
+
+
+
+});
+// const expDateBtn = document.querySelector('.exp-date');
+// expDate.addEventListener('click', function(){
+//   document.querySelector('.container-calendar').classList.toggle('showCalendar');
+// }); 
+
+
+
 // fixed header - Helia
 window.onscroll = function () { scrollFunction() };
 const header = document.querySelector('.headermenu');
+const whiteMenu = document.querySelector('.whitemenu');
 $(".ssize-header-container").removeClass("ssize-back-color");
 $(".small-size-header").css("background-color", "white");
 function scrollFunction() {
@@ -14,6 +50,8 @@ function scrollFunction() {
   if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
     $(".ssize-header-container").addClass("ssize-back-color");
     $(".small-size-header").css("background-color", "rgb(245, 244, 244)");
+    document.querySelector(".exp-date").style.display="none";
+
     //--added by sepideh-----------
     header.style.backgroundColor = "#fff";
     header.style.boxShadow = "rgba(0, 0, 0, 0.08) 0px 1px 12px";
@@ -22,12 +60,12 @@ function scrollFunction() {
     document.querySelector('.headermenu').classList.remove('headerScroll');
     document.querySelector('.centerheader').classList.add("centerScroll");
     document.querySelector('.search-button').classList.add('searchBtnActive');
+   // document.querySelector(".shiny").classList.add('searchBtnActive');
     document.querySelector('.searchsvg').classList.add('searchsvgActive');
     document.querySelector('.guest-container').classList.add('removeHover');
     document.querySelector('.center').style.display = "none";
     document.querySelector('.location-container').style.display = "none";
-    document.querySelector('.check-in-container').style.display = "none";
-    document.querySelector('.check-out-container').style.display = "none";
+    document.querySelector(".checkBigContainer").style.display= "none";
     document.querySelector('.guest').style.display = "none";
     document.querySelector(".host").style.color = "#000";
     document.querySelectorAll('.svgLogo').forEach(function (e) {
@@ -38,28 +76,28 @@ function scrollFunction() {
     document.querySelector('.overlay').style.display = "none";
     document.querySelector('.host').classList.add("rmenuScrollHover");
     document.querySelector(".language").classList.add("rmenuScrollHover");
+    //helia
+    document.querySelector('.places').classList.add('placesBlack');
+    document.querySelector('.exp').classList.add('expBlack');
+    document.querySelector('.onlineexp').classList.add('onlineexpBlack');
+    document.querySelectorAll('.clink').forEach(function(link) {
+      link.classList.add("clinkBlack");
+    });
     ////////////////////open menu
     const openMenu = function(){
-        document.querySelector('.overlay').style.display = "block";
-        document.querySelector('.whitemenu').classList.remove('whiteActive');
-        document.querySelector('.search-button').classList.remove('searchBtnActive');
-        document.querySelector('.searchsvg').classList.remove('searchsvgActive');
-        document.querySelector('.center').style.display ="flex";
-        document.querySelector('.location-container').style.display= "flex";
-        document.querySelector('.check-in-container').style.display= "flex";
-        document.querySelector('.check-out-container').style.display= "flex";
-        document.querySelector('.whitemenuText').style.display="none";
-        document.querySelector('.guest').style.display= "block";
-        document.querySelector('.centerheader').classList.remove("centerScroll");
-        document.querySelector('.guest-container').classList.remove('removeHover');
-        document.querySelectorAll('.clink').forEach(function(link) {
-          link.style.color= "#000000";
-        });
-        document.querySelector('.places').classList.add('placesBlack');
-        document.querySelector('.exp').classList.add('expBlack');
-        document.querySelector('.onlineexp').classList.add('onlineexpBlack');
-        document.querySelector('.headermenu').classList.add('headerScroll');
-        }
+      document.querySelector('.overlay').style.display = "block";
+      document.querySelector('.whitemenu').classList.remove('whiteActive');
+      document.querySelector('.search-button').classList.remove('y');
+      document.querySelector('.searchsvg').classList.remove('searchsvgActive');
+      document.querySelector('.center').style.display ="flex";
+      document.querySelector('.location-container').style.display= "flex";
+      document.querySelector(".checkBigContainer").style.display= "flex";
+      document.querySelector('.whitemenuText').style.display="none";
+      document.querySelector('.guest').style.display= "block";
+      document.querySelector('.centerheader').classList.remove("centerScroll");
+      document.querySelector('.guest-container').classList.remove('removeHover');
+      document.querySelector('.headermenu').classList.add('headerScroll');
+      }
     document.querySelector('.whitemenu').addEventListener('click', openMenu);
     const header0 = document.querySelector('#header0');
     window.onclick = function(event) {
@@ -70,8 +108,7 @@ function scrollFunction() {
         document.querySelector('.guest-container').classList.add('removeHover');
         document.querySelector('.center').style.display ="none";
         document.querySelector('.location-container').style.display= "none";
-        document.querySelector('.check-in-container').style.display= "none";
-        document.querySelector('.check-out-container').style.display= "none";
+        document.querySelector(".checkBigContainer").style.display= "none";
         document.querySelector('.guest').style.display= "none";
         document.querySelector(".host").style.color = "#000";
         document.querySelector('.headermenu').classList.remove('headerScroll');
@@ -80,15 +117,30 @@ function scrollFunction() {
         document.querySelector('.overlay').style.display = "none";
       }
     }
-    
-  } else  {
+    //helia
+    containercalendar.classList.remove("showCalendar");
+     profilemenu.style.display = "none";
+    locationMenu.style.display = "none";
+    $(".location-container").removeClass("removeafter");
+    guestMenu.style.display = "none";
+    $(".searchAppear").css("display", "none");
+    $(".search-button").removeClass("increaseWidth");
+    $(".search-button").removeClass("searchclass");
+    $(".guest-container").removeClass("clickeffect");
+    $(".circle-close").css("display", "none");
+    $(".search-close").css("display", "none");
+    $(".location-container").removeClass("clickeffect");
+  } 
+  
+    else  {
+
     header.style.backgroundColor = "unset" ;
     document.querySelector('.overlay').style.display = "none";
     header.classList.remove('active');
     document.querySelector(".host").style.color = "#fff";
     document.querySelectorAll('.svgLogo').forEach(function (e) {
       e.setAttribute("fill", "#fff");
-    });
+     });
     document.querySelector('.lanlogo').style.fill = "#fff";
     header.style.boxShadow = 'unset';
     document.querySelector('.whitemenu').classList.remove('whiteActive');
@@ -98,13 +150,12 @@ function scrollFunction() {
 
     document.querySelector('.center').style.display ="flex";
     document.querySelector('.location-container').style.display= "flex";
-    document.querySelector('.check-in-container').style.display= "flex";
-    document.querySelector('.check-out-container').style.display= "flex";
+    document.querySelector(".checkBigContainer").style.display= "flex";
     document.querySelector('.whitemenuText').style.display="none";
     document.querySelector('.guest').style.display= "block";
     document.querySelectorAll('.clink').forEach(function(link) {
-      link.style.color= "#ffff";
-    });
+      link.classList.remove("clinkBlack");
+        });
     document.querySelector('.places').classList.remove('placesBlack');
     document.querySelector('.exp').classList.remove('expBlack');
     document.querySelector('.onlineexp').classList.remove('onlineexpBlack');
@@ -115,6 +166,7 @@ function scrollFunction() {
 }
 
 //////////////// flexible calendar - Helia//////////////////////////
+const containercalendar = document.querySelector(".container-calendar");
 const flexBtn = document.querySelector('#flexibleBtn');
 const flexCalender = document.querySelector('.imflexible-container');
 let stayText = document.querySelector('.stay-txt');
@@ -122,22 +174,36 @@ const stayButton = document.querySelectorAll('.stay-btn');
 const months = document.querySelectorAll('.flexibleMonth');
 const monthBtn = document.querySelectorAll('.fc-goin-btn');
 const go = document.querySelector('.go');
-const flexibleText = document.querySelector('.addDatumIn'); 
-let flexTxt1 = "weekend";
-let flexTxt2 = "sep, oct";
+const flexibleText = document.querySelector('.wmweek');
+const flexCalBtn = document.querySelector('#flexx');
+flexCalBtn.addEventListener('click', function(){
+  document.querySelector('.container-calendar').classList.toggle('showCalendar');
+});
+let ftTextArr = ["Sep","Oct","","","","",""];
+let ftText0 = "Weekend";
+let ftText =ftTextArr.filter(a => a!== "" ).join(", ");
 flexBtn.addEventListener('click',  function(){
     flexCalender.classList.toggle('flexActive');
     document.querySelector('#dates').style.backgroundColor = "unset";
     document.querySelector(".check-out-container").style.display="none";
-    document.querySelector('.txt-chin').innerHTML = "Flexible dates";
-    flexibleText.innerText = flexTxt1 + " in " + flexTxt2;
+    document.querySelector(".check-in-container").style.display="none";
+    document.querySelector("#flexx").style.display="flex";
+   document.querySelector("#flex").style.display="flex";
+    flexibleText.innerText =ftText0 + " in " + ftText;
+    flexibleText.classList.add("ftoptxt");
 });
 //set "stay for" section - Helia
 stayButton.forEach(function(e){
  e.addEventListener('click', function() {
     stayText.innerText = e.textContent;
-    e.classList.toggle("stayBtnActive");
-    flexibleText.innerText =stayText.innerText + " in " + flexTxt2;
+    flexibleText.innerText =e.textContent + " in " + ftText;
+    stayButton.forEach(function(x){
+      if (x==e){
+        x.classList.add("stayBtnActive");
+      }else{
+        x.classList.remove("stayBtnActive");
+      }
+    });
  });
 });
 const monthsArr= ["September", 'October', "November", "December", "January", "February"]
@@ -158,14 +224,12 @@ monthBtn.forEach(function (e) {
                     e.classList.add('activeMonth')
                     counter ++;
                 }
+
                 const goIn=  selectedMonths.filter(a => a!== "" ).join(", ");
                 go.innerText = goIn;
-                let ftTextArr = ["","","","","","",""]
                 for(let i =0; i< selectedMonths.length; i++){
-                  //if (selectedMonths[i]!== ""){
-                    ftTextArr[i] = selectedMonths[i].substring(0,3);
-                  
-                  let ftText =ftTextArr.filter(a => a!== "" ).join(", ");
+                  ftTextArr[i] = selectedMonths[i].substring(0,3);
+                  ftText =ftTextArr.filter(a => a!== "" ).join(", ");
                   flexibleText.innerText =stayText.innerText + " in " + ftText;
                 }
                 
@@ -649,7 +713,9 @@ $(document).click(function (event) {
     !$(event.target).closest(minusButton).length &&
     !$(event.target).closest(age).length &&
     !$(event.target).closest(guestContainer).length &&
-    !$(event.target).closest(searchClose).length )
+    !$(event.target).closest(searchClose).length &&
+    !$(event.target).closest(containercalendar).length &&
+    !$(event.target).closest(whiteMenu).length )
      {
     profilemenu.style.display = "none";
     locationMenu.style.display = "none";
@@ -666,7 +732,7 @@ $(document).click(function (event) {
     //checkOut.classList.remove("clickeffect");
     //checkIn.classList.remove("clickeffect");
     $(".whitemenu").css("background" , "white");
-
+    $(".container-calendar").removeClass("showCalendar");
 
 
 
@@ -722,4 +788,25 @@ $(".check-in-container").on({
   }
 });
 
+//-----------date hover
+$(".exp-date").on({
+  mouseenter: function () {
+    $(".location-container").addClass("removeafter");
+  },
+  mouseleave: function () {
+    if(locationMenu.style.display != "block"){
+    $(".location-container").removeClass("removeafter");
+    }
+  }
+});
+
+
+
 //-------------------------------------------------------------------
+//This code is added for the hover effect of the search button which needs the position of mouse in Y and X axis
+let shiny = document.querySelector(".shiny")
+searchButton.addEventListener("mousemove", (e) => {
+  const { x, y } = searchButton.getBoundingClientRect();
+  shiny.style.setProperty("--x", e.clientX - x);
+  shiny.style.setProperty("--y", e.clientY - y);
+});

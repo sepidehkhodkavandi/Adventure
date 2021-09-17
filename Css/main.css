@@ -375,6 +375,7 @@ input:focus {
 
 .centerlinks {
   text-decoration: none;
+  font-size: 16px !important;
 }
 
 @media (max-width: 1127px) {
@@ -389,11 +390,18 @@ input:focus {
   }
 }
 
+.clinkBlack {
+  color: #000000 !important;
+}
+
 .clink {
+  font-size: 16px !important;
   color: #fff;
   font-family: bookAirbnb !important;
   padding: 10px 16px !important;
   white-space: nowrap;
+  background: unset;
+  border: unset;
 }
 
 @media (max-width: 1127px) {
@@ -408,9 +416,27 @@ input:focus {
   }
 }
 
+.checkBigContainer {
+  flex: 2 0 0%;
+}
+
 .exp:hover {
   opacity: 0.8;
   text-decoration: none;
+}
+
+.exp.scale::before {
+  transform: scaleX(1) !important;
+  display: block;
+}
+
+.places.pscale::before {
+  display: none;
+}
+
+.places:hover:before {
+  transform: scaleX(0.25);
+  display: block;
 }
 
 .exp:hover:before {
@@ -433,6 +459,17 @@ input:focus {
   align-items: center;
   justify-content: center;
   height: 80px;
+}
+
+#flexx {
+  flex: 1.6;
+}
+
+#flexx .wmweek {
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .places::before {
@@ -633,6 +670,14 @@ input:focus {
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px !important;
 }
 
+.expDateCaptin {
+  font-family: bookAirbnb;
+  font-size: 14px;
+  color: #717171;
+  line-height: 18px;
+  font-weight: 400;
+}
+
 .add-dates {
   font-family: bookAirbnb;
   font-size: 14px;
@@ -658,6 +703,15 @@ input:focus {
   width: 95px;
 }
 
+.exp-date {
+  color: #222222;
+  text-align: left;
+  flex: 1;
+  flex-basis: 49%;
+  align-items: center;
+  padding-right: 10px;
+}
+
 .guest {
   background: transparent;
   border: 0px;
@@ -675,6 +729,21 @@ input:focus {
   color: #222222;
   text-align: left;
   flex: 1;
+}
+
+.exp-dateContainer {
+  padding: 14px 75px 14px 32px;
+  cursor: pointer;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 32px;
+  min-width: 0px;
+  width: 100%;
+}
+
+.exp-date:hover {
+  background-color: #ebebeb;
+  border-radius: 32px;
 }
 
 .location-container {
@@ -741,7 +810,7 @@ input:focus {
   align-items: center;
   padding-right: 9px;
   border-radius: 32px;
-  flex: 1.2;
+  flex: 1.4;
   justify-content: space-between;
 }
 
@@ -757,12 +826,18 @@ input:focus {
   border: 1px solid transparent;
   border-radius: 32px;
   min-width: 0px;
+  width: 100%;
+}
+
+.changeflex {
+  flex-basis: 45%;
 }
 
 .txt-loc,
 .txt-chin,
 .txt-chout,
-.txt-guest {
+.txt-guest,
+.txt-expDate {
   font-size: 12px;
   line-height: 16px;
   font-weight: 800;
@@ -972,6 +1047,24 @@ input:focus {
 
 .removeafter::after {
   display: none;
+}
+
+.shiny {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 24px;
+  z-index: 0;
+  background-size: 200% 200% !important;
+  opacity: 0 !important;
+  transition: opacity 1.25s ease 0s !important;
+  background-position: calc((100 - var(--x, 0)) * 1%) calc((100 - var(--y, 0)) * 1%);
+  background-image: radial-gradient(circle at center center, #ff385c 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%) !important;
+  position: absolute;
+}
+
+.search-button:hover .shiny {
+  opacity: 1 !important;
 }
 
 .search-button {
@@ -1564,7 +1657,7 @@ input:focus {
 
 .stayBtnActive {
   background-color: #f7f7f7;
-  border: 1.5px solid black !important;
+  border: 2px solid black !important;
 }
 
 .fc-btns {
@@ -1628,6 +1721,7 @@ input:focus {
 .activeMonth {
   background-color: #f7f7f7 !important;
   color: #222222 !important;
+  border: 2px solid black !important;
 }
 
 .fc-goin-btn img {

@@ -83,11 +83,11 @@
           </div>
           <div class="centerheader">
             <div class="center">
-              <a href="" class="centerlinks df">
-                <div class="clink places"><span>Places to stay</span></div>
-                <div class="clink exp"><span>Experiences</span></div>
-                <div class="clink onlineexp"><span>Online Experiences</span></div>
-              </a>
+              <div href="" class="centerlinks df">
+                <button class="clink places"><span>Places to stay</span></button>
+                <button class="clink exp"><span>Experiences</span></button>
+                <button class="clink onlineexp"><span>Online Experiences</span></button>
+              </div>
             </div>
             <div class="whitemenu  df">
               <p class="whitemenuText">Start your search</p>
@@ -114,26 +114,60 @@
       
               </div>
               <!-- ------------------------------------ -->
-              <div class="check-in-container df onhover click-calendar ">
-                <div class="check in">
-                  <div class="txt-chin">Check in</div>
-                  <div class="add-dates addDatumIn">Add dates</div>
+              <div class="checkBigContainer df">
+                <div class="check-in-container df onhover click-calendar ">
+                  <div class="check in">
+                    <div class="txt-chin">Check in</div>
+                    <div class="add-dates addDatumIn">Add dates</div>
+                  </div>
+                </div>
+                <div class="check-out-container df onhover click-calendar">
+                  <div class="check out">
+                    <div class="txt-chout">Check out</div>
+                    <div class="add-dates addDatumOut">Add dates</div>
+                  </div>
+                </div>
+                <!-- ------------------------------------ -->
+                <div class="check-out-container dn onhover" id="flexx">
+                    <div class="check out">
+                    <div class="txt-chout">Flexible dates</div>
+                    <div class="wmweek">Weekend in Sep, Oct</div>
+                  </div>
                 </div>
               </div>
-              <!-- ------------------------------------ -->
-              <div class="check-out-container df onhover click-calendar">
-                <div class="check out">
-                  <div class="txt-chout">Check out</div>
-                  <div class="add-dates addDatumOut">Add dates</div>
+              <div class="exp-date dn ">
+                <div class="exp-dateContainer">
+                  <div class="txt-expDate">Date</div>
+                  <div class="expDateCaptin">Add when you want to go</div>
                 </div>
+            <!-- --------button for date------- -->
+                                <div class="searchdate">
+                                  <div class="search-button" id="srch">
+                                    <span class="shiny"> 
+                                    </span>
+                                    <svg class="searchsvg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                      role="presentation" focusable="false"
+                                      style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                                      <g fill="none">
+                                        <path
+                                          d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
+                                        </path>
+                                      </g>
+                                    </svg>
+                                    <div class="searchAppear">Search</div> 
+                                  </div>
+                                </div>
+                                  <!-- --------------- -->
               </div>
-              <!-- ------------------------------------ -->
+              <!------------------------------------------------->
               <div class="guest-container df">
                 <div class="guest">
                   <div class="txt-guest">Guests</div>
                   <div class="add-dates-s">Add guests</div>
                 </div>
                 <div class="search-button" id="srch">
+                  <span class="shiny"> 
+                  </span>
                   <svg class="searchsvg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                     role="presentation" focusable="false"
                     style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
@@ -226,7 +260,7 @@
                        <p>stay for a <span class="stay-txt">weekend</span></p>
                     </div>
                     <div class="fc-d2">
-                        <button class="stay-btn fc-btns">Weekend</button>
+                        <button class="stay-btn fc-btns stayBtnActive">Weekend</button>
                         <button class="stay-btn fc-btns">Week</button>
                         <button class="stay-btn fc-btns">Month</button>
                     </div>
@@ -237,11 +271,11 @@
                         <p >Go in <span class="go">September, October</span></p>
                     </div>
                     <div class="fc-d3">
-                        <button class="fc-goin-btn fc-btns">
+                        <button class="fc-goin-btn fc-btns activeMonth">
                             <img src="./Images/cal2.png">
                             <p class="flexibleMonth">September</p>
                         </button>
-                        <button class="fc-goin-btn fc-btns">
+                        <button class="fc-goin-btn fc-btns activeMonth">
                             <img src="./Images/cal2.png">
                             <p class="flexibleMonth">October</p>
                         </button>
