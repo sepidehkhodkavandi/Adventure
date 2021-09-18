@@ -1,5 +1,5 @@
 
-
+const containerCalendar = document.querySelector(".container-calendar");
 //experinces tab - Helia
 const exp = document.querySelector('.exp');
 const places = document.querySelector('.places');
@@ -23,7 +23,7 @@ places.addEventListener('click', function(){
   places.classList.add("scale");
 });
 // const expDateBtn = document.querySelector('.exp-date');
-// expDate.addEventListener('click', function(){
+//   expDate.addEventListener('click', function(){
 //   document.querySelector('.container-calendar').classList.toggle('showCalendar');
 // }); 
 
@@ -58,12 +58,6 @@ function scrollFunction() {
     document.querySelector('.whitemenu').classList.add('whiteActive');//remove after
     document.querySelector('.headermenu').classList.remove('headerScroll'); //height responsive
     document.querySelector('.centerheader').classList.add("centerScroll"); //media query-medium device
-    document.querySelectorAll('.search-button').forEach(function(s){    //size of search button
-      s.classList.add('searchBtnActive');
-    })
-   document.querySelectorAll('.searchsvg').forEach(function(svg) {   //size of search svg
-    svg.classList.add('searchsvgActive');
-  })
     document.querySelector('.guest-container').classList.add('removeHover'); //unset bgcolor
     document.querySelector('.center').style.display = "none";
     document.querySelector("#smallsearch").style.display ="flex";
@@ -86,51 +80,48 @@ function scrollFunction() {
     document.querySelectorAll('.clink').forEach(function(link) {
       link.classList.add("clinkBlack");
     });
+    document.querySelector('.container-calendar').classList.add('dni');
     ////////////////////open menu
     const openMenu = function(){
       document.querySelector('.overlay').style.display = "block";
+      document.querySelector('.overlay').classList.remove('dni');
       document.querySelector('.whitemenu').classList.remove('whiteActive');
-      document.querySelectorAll('.searchsvg').forEach(function(svg) {
-        svg.classList.remove('searchsvgActive');
-      });
-      document.querySelectorAll('.search-button').forEach(function(s){
-        s.classList.remove('searchBtnActive');
-      });
       document.querySelector('.center').style.display ="flex";
       document.querySelector("#smallsearch").style.display ="none";
-      
       document.querySelector(".tabwrapper").style.display ="flex";
       document.querySelector('.whitemenuText').style.display="none";
-      //document.querySelector('.guest').style.display= "block";
       document.querySelector('.centerheader').classList.remove("centerScroll");
       document.querySelector('.guest-container').classList.remove('removeHover');
       document.querySelector('.headermenu').classList.add('headerScroll');
       }
     document.querySelector('.whitemenu').addEventListener('click', openMenu);
-    const header0 = document.querySelector('#header0');
-    // window.onclick = function(event) {
-    //   if (event.target !== header0) {
-    //     document.querySelector('.whitemenu').classList.add('whiteActive');
-    //     document.querySelectorAll('.searchsvg').forEach(function(svg) {
-    //     svg.classList.add('searchsvgActive');
-    //     });
-    //     document.querySelectorAll('.search-button').forEach(function(s){
-    //     s.classList.add('searchBtnActive');
-    //     });
-    //     document.querySelector('.guest-container').classList.add('removeHover');
-    //     document.querySelector('.center').style.display ="none";
-    //     document.querySelector('.location-container').style.display= "none";
-    //     document.querySelector(".checkBigContainer").style.display= "none";
-    //     document.querySelector('.guest').style.display= "none";
-    //     //document.querySelector(".host").style.color = "#000";
-    //     document.querySelector('.headermenu').classList.remove('headerScroll');
-    //     document.querySelector('.centerheader').classList.add("centerScroll");
-    //     document.querySelector('.whitemenuText').style.display="block";
-    //     document.querySelector('.overlay').style.display = "none";
-    //   }
-    // }
+    let whead = document.querySelector('#whead');
+    let CC = document.querySelector(".container-calendar");
+    $("html").click(function (event){
+       if (!$(event.target).closest(whead).length){
+        document.querySelector('.overlay').style.display = "none";
+        document.querySelector('.whitemenu').classList.add('whiteActive');
+        document.querySelector('.center').style.display ="none";
+        document.querySelector("#smallsearch").style.display ="flex";
+        document.querySelector(".tabwrapper").style.display ="none";
+        document.querySelector('.whitemenuText').style.display="block";
+        document.querySelector('.centerheader').classList.add("centerScroll");
+        document.querySelector('.guest-container').classList.add('removeHover');
+        document.querySelector('.headermenu').classList.remove('headerScroll');
+       }
+      })
+
+      // $("html").click(function (event){
+      //   if (!$(event.target).closest($(".container-calendar").length)){
+      //   document.querySelector('.container-calendar').classList.add('dni');
+
+      //   }
+      // })
+
+     
+
     //helia
-    containercalendar.classList.remove("showCalendar");
+    containerCalendar.style.display = "none";
      profilemenu.style.display = "none";
     locationMenu.style.display = "none";
     $(".location-container").removeClass("removeafter");
@@ -148,22 +139,15 @@ function scrollFunction() {
     else  {
 
     header.style.backgroundColor = "unset" ;
-    document.querySelector('.overlay').style.display = "none";
+    document.querySelector('.overlay').classList.add('dni');
     header.classList.remove('active');
     document.querySelector(".host").style.color = "#fff";
-    //document.querySelector(".exp-dateContainer").style.display="flex";
     document.querySelectorAll('.svgLogo').forEach(function (e) {
       e.setAttribute("fill", "#fff");
      });
     document.querySelector('.lanlogo').style.fill = "#fff";
     header.style.boxShadow = 'unset';
     document.querySelector('.whitemenu').classList.remove('whiteActive');
-    document.querySelectorAll('.searchsvg').forEach(function(svg) {
-      svg.classList.remove('searchsvgActive');
-    });
-    document.querySelectorAll('.search-button').forEach(function(s){
-      s.classList.remove('searchBtnActive');
-    })
     document.querySelector('.guest-container').classList.remove('removeHover');
 
     document.querySelector('.center').style.display ="flex";
@@ -185,7 +169,12 @@ function scrollFunction() {
 }
 
 //////////////// flexible calendar - Helia//////////////////////////
-const containercalendar = document.querySelector(".container-calendar");
+const wrapperCalendar = document.querySelector('.wrapper-calendar')
+const tabCalendar = document.querySelector('#dates')
+const flexibleText = document.querySelector('.addDatumIn');
+
+
+//const containercalendar = document.querySelector(".container-calendar");
 const flexBtn = document.querySelector('#flexibleBtn');
 const flexCalender = document.querySelector('.imflexible-container');
 let stayText = document.querySelector('.stay-txt');
@@ -193,29 +182,55 @@ const stayButton = document.querySelectorAll('.stay-btn');
 const months = document.querySelectorAll('.flexibleMonth');
 const monthBtn = document.querySelectorAll('.fc-goin-btn');
 const go = document.querySelector('.go');
-const flexibleText = document.querySelector('.wmweek');
+const flexibleText0 = document.querySelector('.wmweek');
 const flexCalBtn = document.querySelector('#flexx');
-flexCalBtn.addEventListener('click', function(){
-  document.querySelector('.container-calendar').classList.toggle('showCalendar');
-});
+/////////////////////////////////////tab Calender and tab flexi///////////
+
+ tabCalendar.addEventListener('click', function () {
+  this.classList.add('bgw')
+  flexBtn.classList.remove('bgw')
+  flexCalBtn.style.display = "none";
+  document.querySelector(".check-out-container").style.display = "flex";
+  document.querySelector(".check-in-container").style.display = "flex";
+  wrapperCalendar.style.display = 'block'
+  flexCalender.style.display = 'none';
+  document.querySelector(".container-calendar").classList.remove('flexCalHeight');
+  flexCalender.classList.remove('flexActive');
+  document.querySelector('.btn-days').classList.remove('dn');
+
+})
+/////////////////////////////////////tab Calender and tab flexi///////////7/////////
+
 let ftTextArr = ["Sep","Oct","","","","",""];
 let ftText0 = "Weekend";
 let ftText =ftTextArr.filter(a => a!== "" ).join(", ");
 flexBtn.addEventListener('click',  function(){
-    flexCalender.classList.toggle('flexActive');
-    document.querySelector('#dates').style.backgroundColor = "unset";
-    document.querySelector(".check-out-container").style.display="none";
-    document.querySelector(".check-in-container").style.display="none";
-    document.querySelector("#flexx").style.display="flex";
-   document.querySelector("#flex").style.display="flex";
-    flexibleText.innerText =ftText0 + " in " + ftText;
-    flexibleText.classList.add("ftoptxt");
+  this.classList.add('bgw')
+  tabCalendar.classList.remove('bgw')
+  wrapperCalendar.style.display = 'none';
+  document.querySelector('.btn-days').classList.add('dn');
+  flexCalBtn.style.display = "flex";
+  document.querySelector(".check-out-container").style.display = "none";
+  document.querySelector(".check-in-container").style.display = "none";
+  flexCalender.classList.add('flexActive');
+  document.querySelector("#flexx").style.display="flex";
+  flexibleText0.innerText =ftText0 + " in " + ftText;
+  flexibleText0.classList.add("ftoptxt");
+  document.querySelector(".container-calendar").classList.add('flexCalHeight');
+  document.querySelector("#flexx").classList.add('clickeffect');
+  document.querySelector(".location-container").classList.add('removeafter');
+  document.querySelector("#flexx").classList.add('removeafter');
+
+
+
+
+   
 });
 //set "stay for" section - Helia
 stayButton.forEach(function(e){
  e.addEventListener('click', function() {
     stayText.innerText = e.textContent;
-    flexibleText.innerText =e.textContent + " in " + ftText;
+    flexibleText0.innerText =e.textContent + " in " + ftText;
     stayButton.forEach(function(x){
       if (x==e){
         x.classList.add("stayBtnActive");
@@ -249,7 +264,7 @@ monthBtn.forEach(function (e) {
                 for(let i =0; i< selectedMonths.length; i++){
                   ftTextArr[i] = selectedMonths[i].substring(0,3);
                   ftText =ftTextArr.filter(a => a!== "" ).join(", ");
-                  flexibleText.innerText =stayText.innerText + " in " + ftText;
+                  flexibleText0.innerText =stayText.innerText + " in " + ftText;
                 }
                 
 
@@ -306,109 +321,161 @@ document.addEventListener("scroll", function () { // or window.addEventListener(
 // the function to open check in/check out
 const checkIn = document.querySelector('.check-in-container')
 const checkOut = document.querySelector('.check-out-container')
+const calendarWrapper = document.querySelector('.month-wrapper')
+const btnDay = document.querySelector('.btn-days')
+
+
+
 
 const calenderF = function () {
-  document.querySelector('.container-calendar').classList.toggle('showCalendar')
+
+  document.querySelector('.container-calendar').classList.toggle('showCalendar');
+  tabCalendar.classList.toggle('wrapper-calendar');
+  document.querySelector('.container-calendar').classList.remove('dni');
+  // tabCalendar.click()
 }
+checkIn.addEventListener('click', function () {
+  this.classList.add('sh-btn')
+  checkOut.classList.remove('sh-btn')
+  calenderF()
+})
 
-checkIn.addEventListener('click', calenderF)
-checkOut.addEventListener('click', calenderF)
+checkOut.addEventListener('click', function () {
+  this.classList.add('sh-btn')
+
+  checkIn.classList.remove('sh-btn')
+  calenderF()
+})
 
 
-// $(".check-in-container").click(function () {
-//   $(".check-in-container").addClass("clickeffect");
-//   $(".location-container").addClass("removeafter");
-//   $(".check-in-container").addClass("removeafter");
-//   $(".whitemenu").css("background" , "rgb(247, 247, 247");
 
-
-// })
-// $(".check-out-container").click(function () {
-//   $(".check-out-container").addClass("clickeffect");
-//   $(".check-in-container").addClass("removeafter");
-//   $(".check-out-container").addClass("removeafter");
-//   $(".whitemenu").css("background" , "rgb(247, 247, 247");
-// })
-$("#dates")
+$(".click-calendar")
   .dateRangePicker({
+
     format: "MMM DD",
     // inline: true,
-    container: '.container-calendar ',
-    stickyMonths: true,
-    // alwaysOpen: true
+    container: '.wrapper-calendar ',
+    alwaysOpen: true
+
   })
   .on("datepicker-first-date-selected", function (event, obj) {
     /* This event will be triggered when first date is selected */
     $(".addDatumIn").text(moment(obj.date1).format("MMM DD"));
-
-    // $(".check-in-container").addClass("clickeffect");
-    // $(".check-in-container").addClass(".circle-close");
-
-
+    $(".addDatumIn").css("color", "black");
+    $(".addDatumIn").css("font-weight", "700");
+    // $(".check-in-container").removeClass('.sh-btn')
+    checkIn.classList.remove('sh-btn')
+    checkOut.classList.add('sh-btn')
 
   })
   .on("datepicker-change", function (event, obj) {
     /* This event will be triggered when second date is selected */
-    console.log("change", obj);
+    // console.log("change", obj);
     $(".addDatumOut").text(moment(obj.date2).format("MMM DD"));
-    // $(".check-out-container").addClass("clickeffect");
-    // $(".check-in-container").addClass(".circle-close");
-  })
-  // .on("datepicker-apply", function (event, obj) {
-  //   /* This event will be triggered when user clicks on the apply button */
-  //   console.log("apply", obj);
-  // })
-  // .on("datepicker-close", function () {
-  //   /* This event will be triggered before date range picker close animation */
-  //   console.log("before close");
-  // })
-  // .on("datepicker-closed", function () {
-  //   /* This event will be triggered after date range picker close animation */
-  //   console.log("after close");
-  // })
-  .on("datepicker-open", function () {
-    let boo = $("<div/>").appendTo("button.tab-btn");
-    console.log(boo)
+    $(".addDatumOut").css("color", "black");
+    $(".addDatumOut").css("font-weight", "700");
+    btnDay.style.display = 'flex';
+
+    $(".close2").css("display", "flex");
+    $("#circle").css("display", "flex");
+
+
+
+    const childBtnDay = document.querySelectorAll('.btn-day')
+    const AddDates = document.querySelectorAll('.add-dates')
+
+    let indate = $('.add-dates').eq(0).text()
+    let outdate = $('.add-dates').eq(1).text()
+    let x = $('.svg-span').eq(0).text()
+
+
+    childBtnDay.forEach(function (element, index) {
+      element.addEventListener('click', function () {
+
+
+        if (index == 0) {
+          $('.add-dates').eq(0).text(indate + ' ' + x + ' ' + 1)
+          $('.add-dates').eq(1).text(outdate + ' ' + x + ' ' + 1)
+        }
+
+        else if (index == 1) {
+          $('.add-dates').eq(0).text(indate + ' ' + x + ' ' + 3)
+          $('.add-dates').eq(1).text(outdate + ' ' + x + ' ' + 3)
+        }
+
+        else if (index == 2) {
+          $('.add-dates').eq(0).text(indate + ' ' + x + ' ' + 7)
+          $('.add-dates').eq(1).text(outdate + ' ' + x + ' ' + 7)
+        }
+
+      })
+    })
+    $("#circle").on("click", function () {
+      $(".close2").css("display", "none");
+      $("#circle").css("display", "none");
+      $('.add-dates').text('Add dates');
+      $(".check-out-container").removeClass(".bgw");
+      $(".check-in-container").addClass(".bgw");
+      $(".addDatumOut").css("color", "#222222");
+      $(".addDatumOut").css("font-weight", "300");
+      $(".addDatumIn").css("color", "color: #222222");
+      $(".addDatumIn").css("font-weight", "300");
+
+    })
 
   })
-
-
 // ---------------------------Tab Inspiration---------------samira----------------------
 
 let country = document.querySelectorAll(".country")
 let btn = document.querySelectorAll(".ins-btn")
 let box = document.querySelector(".country__items")
+
 btn.forEach((item, index) => {
-  item.addEventListener("click", () => {
+  item.addEventListener("click", function () {
+
+    btn.forEach(function (x) {
+      if (x == item) {
+        x.classList.add("addAfter");
+      } else {
+        x.classList.remove("addAfter");
+      }
+    })
+
+
+
+
     if (btn[index].classList.contains("active")) {
       btn[index].classList.remove("active")
+
 
       country[index].style.display = "none"
       box.classList.remove("move")
       item.style.fontWeight = "400"
+
     } else {
       item.style.fontWeight = "700"
       country[index].style.display = "flex"
       box.classList.add("move")
 
 
-
       country.forEach((itemCountry, i) => {
         if (i != index) {
           itemCountry.style.display = "none"
+          // item.classList.remove('addAfter')
           btn[i].classList.remove("active")
           btn[i].style.fontWeight = "400"
+
         }
       })
 
       btn[index].classList.add("active")
-      btn[index].classList.add("removeafter")
+
     }
   })
 })
 
-
 // -------------------------samira----------------------//
+
 
 // --------------Added for the footer in mobile devices--------------
 let fsvg = document.querySelectorAll(".small-footer-svg");
@@ -454,7 +521,7 @@ let counterP = document.querySelectorAll(".counterp");
 let age = document.querySelectorAll(".age");
 let guestContainer = document.querySelector(".geust-container");
 let searchClose = document.querySelector(".search-close");
-let containerCalendar = document.querySelector(".container-calendar")
+
 
 //to change the styles of minus button
 $(".minus-button").addClass("ct");
@@ -616,12 +683,16 @@ $(".guest").click(function () {
     $(".check-out-container").addClass("removeafter");
     $(".guest-container").addClass("clickeffect");
     $(".whitemenu").css("background" , "rgb(247, 247, 247");
-    if (locationMenu.style.display == "block" || profilemenu.style.display == "block") {
+    if (locationMenu.style.display == "block" || profilemenu.style.display == "block" || $(".container-calendar").hasClass("showCalendar")) {
       locationMenu.style.display = "none";
       profilemenu.style.display = "none";
       guestMenu.style.display = "block";
+      $(".container-calendar").addClass("dni");
       $(".whitemenu").css("background" , "rgb(247, 247, 247");
       $(".check-out-container").addClass("removeafter");
+      $(".check-out-container").removeClass("clickeffect");
+      $(".check-in-container").removeClass("clickeffect");
+      $('#flexx').removeClass("clickeffect");
     }
 
     if ($(".add-dates-s").text() != "Add guests") {
@@ -670,9 +741,14 @@ $(".location").click(function () {
 
     }
     $(".location-container").addClass("clickeffect");
-    if (guestMenu.style.display == "block" || profilemenu.style.display == "block") {
+    if (guestMenu.style.display == "block" || profilemenu.style.display == "block" ||  $(".container-calendar").hasClass("showCalendar") ) {
         profilemenu.style.display = "none";
         guestMenu.style.display = "none";
+        $(".container-calendar").addClass("dni");
+        $(".check-out-container").removeClass("clickeffect");
+        $(".check-in-container").removeClass("clickeffect");
+        $('#flexx').removeClass("clickeffect");
+     
     }
 
   }
@@ -684,15 +760,16 @@ $(".sign-in-button").click(function () {
 
   } else {
     profilemenu.style.display = "block";
-    if (guestMenu.style.display == "block" || locationMenu.style.display == "block" || $(".search-button").contains("exapnded-search")) {
-      locationMenu.style.display = "none";
-      guestMenu.style.display = "none";
-      $(".location-container").removeClass("removeafter");
-      $(".search-button").removeClass("exapnded-search");
-      $(".searchAppear").css("display", "none");
-      $(".search-button").removeClass("increaseWidth");
-      $(".location-container").removeClass("clickeffect");
-      $(".guest-container").removeClass("clickeffect");
+    if (guestMenu.style.display == "block" || locationMenu.style.display == "block" || $(".search-button").hasClass("exapnded-search") || $(".container-calendar").hasClass("showCalendar")) {
+        locationMenu.style.display = "none";
+        guestMenu.style.display = "none";
+        document.querySelector('.container-calendar').classList.add('dni');
+        $(".location-container").removeClass("removeafter");
+        $(".search-button").removeClass("exapnded-search");
+        $(".searchAppear").css("display", "none");
+        $(".search-button").removeClass("increaseWidth");
+        $(".location-container").removeClass("clickeffect");
+        $(".guest-container").removeClass("clickeffect");
     }
   }
 });
@@ -720,15 +797,17 @@ $(".search-button").click(function () {
 
 });
 
-$(document).click(function (event) {
-  if (!$(event.target).closest(containercalendar).length &&
-      !$(event.target).closest(whiteMenu).length){
-        $(".container-calendar").removeClass("showCalendar");
-      }
-})
+// $(document).click(function (event) {
+//   if (!$(event.target).closest(containercalendar).length &&
+//       !$(event.target).closest(whiteMenu).length){
+//         $(".container-calendar").removeClass("showCalendar");
+//       }
+// })
 
 
 //click on anywhere in the document except the ones mentioned in the if condition
+
+
 $(document).click(function (event) {
   if (!$(event.target).closest(signInButton).length &&
     !$(event.target).closest(profilemenu).length &&
@@ -742,8 +821,12 @@ $(document).click(function (event) {
     !$(event.target).closest(age).length &&
     !$(event.target).closest(guestContainer).length &&
     !$(event.target).closest(searchClose).length &&
-    !$(event.target).closest(whiteMenu).length )
+    !$(event.target).closest(whiteMenu).length 
+    //!$(event.target).closest(CC).length
+     )
      {
+   // whead.style.display = "none";
+    //CC.classList.add("dn");
     profilemenu.style.display = "none";
     locationMenu.style.display = "none";
     $(".location-container").removeClass("removeafter");
