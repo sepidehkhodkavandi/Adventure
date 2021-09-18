@@ -1,4 +1,6 @@
-//experinces - Helia
+
+
+//experinces tab - Helia
 const exp = document.querySelector('.exp');
 const places = document.querySelector('.places');
 exp.addEventListener('click', function(){
@@ -8,10 +10,9 @@ exp.addEventListener('click', function(){
   $(".location-container").addClass("changeflex");
   exp.classList.add("scale");
   places.classList.add("pscale");
- // $(".search-button").addClass
-
 });
 
+// places tab 
 places.addEventListener('click', function(){
   document.querySelector(".checkBigContainer").style.display= "flex";
   document.querySelector(".exp-date").style.display="none";
@@ -20,11 +21,6 @@ places.addEventListener('click', function(){
   exp.classList.remove("scale");
   places.classList.remove("pscale");
   places.classList.add("scale");
-  //places.classList.remove();
-
-
-
-
 });
 // const expDateBtn = document.querySelector('.exp-date');
 // expDate.addEventListener('click', function(){
@@ -44,30 +40,37 @@ function scrollFunction() {
   if (document.body.scrollTop == 0) {
     $(".ssize-header-container").removeClass("ssize-back-color");
     $(".small-size-header").css("background-color", "white");
-
-  }
+}
 
   if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
     $(".ssize-header-container").addClass("ssize-back-color");
     $(".small-size-header").css("background-color", "rgb(245, 244, 244)");
-    document.querySelector(".exp-date").style.display="none";
+
 
     //--added by sepideh-----------
+
+
+
+    //change header style on scroll
     header.style.backgroundColor = "#fff";
     header.style.boxShadow = "rgba(0, 0, 0, 0.08) 0px 1px 12px";
     header.classList.add('active');
-    document.querySelector('.whitemenu').classList.add('whiteActive');
-    document.querySelector('.headermenu').classList.remove('headerScroll');
-    document.querySelector('.centerheader').classList.add("centerScroll");
-    document.querySelector('.search-button').classList.add('searchBtnActive');
-   // document.querySelector(".shiny").classList.add('searchBtnActive');
-    document.querySelector('.searchsvg').classList.add('searchsvgActive');
-    document.querySelector('.guest-container').classList.add('removeHover');
+    document.querySelector('.whitemenu').classList.add('whiteActive');//remove after
+    document.querySelector('.headermenu').classList.remove('headerScroll'); //height responsive
+    document.querySelector('.centerheader').classList.add("centerScroll"); //media query-medium device
+    document.querySelectorAll('.search-button').forEach(function(s){    //size of search button
+      s.classList.add('searchBtnActive');
+    })
+   document.querySelectorAll('.searchsvg').forEach(function(svg) {   //size of search svg
+    svg.classList.add('searchsvgActive');
+  })
+    document.querySelector('.guest-container').classList.add('removeHover'); //unset bgcolor
     document.querySelector('.center').style.display = "none";
-    document.querySelector('.location-container').style.display = "none";
-    document.querySelector(".checkBigContainer").style.display= "none";
-    document.querySelector('.guest').style.display = "none";
+    document.querySelector("#smallsearch").style.display ="flex";
+   
+    document.querySelector(".tabwrapper").style.display = "none";
     document.querySelector(".host").style.color = "#000";
+    //change right and left menu color
     document.querySelectorAll('.svgLogo').forEach(function (e) {
       e.setAttribute("fill", "rgb(255, 56, 92)");
     });
@@ -87,36 +90,45 @@ function scrollFunction() {
     const openMenu = function(){
       document.querySelector('.overlay').style.display = "block";
       document.querySelector('.whitemenu').classList.remove('whiteActive');
-      document.querySelector('.search-button').classList.remove('y');
-      document.querySelector('.searchsvg').classList.remove('searchsvgActive');
+      document.querySelectorAll('.searchsvg').forEach(function(svg) {
+        svg.classList.remove('searchsvgActive');
+      });
+      document.querySelectorAll('.search-button').forEach(function(s){
+        s.classList.remove('searchBtnActive');
+      });
       document.querySelector('.center').style.display ="flex";
-      document.querySelector('.location-container').style.display= "flex";
-      document.querySelector(".checkBigContainer").style.display= "flex";
+      document.querySelector("#smallsearch").style.display ="none";
+      
+      document.querySelector(".tabwrapper").style.display ="flex";
       document.querySelector('.whitemenuText').style.display="none";
-      document.querySelector('.guest').style.display= "block";
+      //document.querySelector('.guest').style.display= "block";
       document.querySelector('.centerheader').classList.remove("centerScroll");
       document.querySelector('.guest-container').classList.remove('removeHover');
       document.querySelector('.headermenu').classList.add('headerScroll');
       }
     document.querySelector('.whitemenu').addEventListener('click', openMenu);
     const header0 = document.querySelector('#header0');
-    window.onclick = function(event) {
-      if (event.target == header0) {
-        document.querySelector('.whitemenu').classList.add('whiteActive');
-        document.querySelector('.search-button').classList.add('searchBtnActive');
-        document.querySelector('.searchsvg').classList.add('searchsvgActive');
-        document.querySelector('.guest-container').classList.add('removeHover');
-        document.querySelector('.center').style.display ="none";
-        document.querySelector('.location-container').style.display= "none";
-        document.querySelector(".checkBigContainer").style.display= "none";
-        document.querySelector('.guest').style.display= "none";
-        document.querySelector(".host").style.color = "#000";
-        document.querySelector('.headermenu').classList.remove('headerScroll');
-        document.querySelector('.centerheader').classList.add("centerScroll");
-        document.querySelector('.whitemenuText').style.display="block";
-        document.querySelector('.overlay').style.display = "none";
-      }
-    }
+    // window.onclick = function(event) {
+    //   if (event.target !== header0) {
+    //     document.querySelector('.whitemenu').classList.add('whiteActive');
+    //     document.querySelectorAll('.searchsvg').forEach(function(svg) {
+    //     svg.classList.add('searchsvgActive');
+    //     });
+    //     document.querySelectorAll('.search-button').forEach(function(s){
+    //     s.classList.add('searchBtnActive');
+    //     });
+    //     document.querySelector('.guest-container').classList.add('removeHover');
+    //     document.querySelector('.center').style.display ="none";
+    //     document.querySelector('.location-container').style.display= "none";
+    //     document.querySelector(".checkBigContainer").style.display= "none";
+    //     document.querySelector('.guest').style.display= "none";
+    //     //document.querySelector(".host").style.color = "#000";
+    //     document.querySelector('.headermenu').classList.remove('headerScroll');
+    //     document.querySelector('.centerheader').classList.add("centerScroll");
+    //     document.querySelector('.whitemenuText').style.display="block";
+    //     document.querySelector('.overlay').style.display = "none";
+    //   }
+    // }
     //helia
     containercalendar.classList.remove("showCalendar");
      profilemenu.style.display = "none";
@@ -130,6 +142,7 @@ function scrollFunction() {
     $(".circle-close").css("display", "none");
     $(".search-close").css("display", "none");
     $(".location-container").removeClass("clickeffect");
+    $(".whitemenu").css("background" , "white");
   } 
   
     else  {
@@ -138,21 +151,27 @@ function scrollFunction() {
     document.querySelector('.overlay').style.display = "none";
     header.classList.remove('active');
     document.querySelector(".host").style.color = "#fff";
+    //document.querySelector(".exp-dateContainer").style.display="flex";
     document.querySelectorAll('.svgLogo').forEach(function (e) {
       e.setAttribute("fill", "#fff");
      });
     document.querySelector('.lanlogo').style.fill = "#fff";
     header.style.boxShadow = 'unset';
     document.querySelector('.whitemenu').classList.remove('whiteActive');
-    document.querySelector('.search-button').classList.remove('searchBtnActive');
-    document.querySelector('.searchsvg').classList.remove('searchsvgActive');
+    document.querySelectorAll('.searchsvg').forEach(function(svg) {
+      svg.classList.remove('searchsvgActive');
+    });
+    document.querySelectorAll('.search-button').forEach(function(s){
+      s.classList.remove('searchBtnActive');
+    })
     document.querySelector('.guest-container').classList.remove('removeHover');
 
     document.querySelector('.center').style.display ="flex";
-    document.querySelector('.location-container').style.display= "flex";
-    document.querySelector(".checkBigContainer").style.display= "flex";
+    document.querySelector(".tabwrapper").style.display ="flex";
+    document.querySelector("#smallsearch").style.display ="none";
+
+
     document.querySelector('.whitemenuText').style.display="none";
-    document.querySelector('.guest').style.display= "block";
     document.querySelectorAll('.clink').forEach(function(link) {
       link.classList.remove("clinkBlack");
         });
@@ -426,7 +445,7 @@ let profilemenu = document.querySelector(".profilemenu");
 let signInButton = document.querySelector(".sign-in-button");
 let locationMenu = document.querySelector(".location-input-menu");
 let typeLocation = document.querySelector(".type-location");
-let searchButton = document.querySelector(".search-button");
+let searchButton = document.querySelectorAll(".search-button");
 let guestMenu = document.querySelector(".guest-menu");
 let guest = document.querySelector(".guest");
 let plusButton = document.querySelectorAll(".plus-button");
@@ -700,6 +719,15 @@ $(".search-button").click(function () {
 
 
 });
+
+$(document).click(function (event) {
+  if (!$(event.target).closest(containercalendar).length &&
+      !$(event.target).closest(whiteMenu).length){
+        $(".container-calendar").removeClass("showCalendar");
+      }
+})
+
+
 //click on anywhere in the document except the ones mentioned in the if condition
 $(document).click(function (event) {
   if (!$(event.target).closest(signInButton).length &&
@@ -714,7 +742,6 @@ $(document).click(function (event) {
     !$(event.target).closest(age).length &&
     !$(event.target).closest(guestContainer).length &&
     !$(event.target).closest(searchClose).length &&
-    !$(event.target).closest(containercalendar).length &&
     !$(event.target).closest(whiteMenu).length )
      {
     profilemenu.style.display = "none";
@@ -732,7 +759,7 @@ $(document).click(function (event) {
     //checkOut.classList.remove("clickeffect");
     //checkIn.classList.remove("clickeffect");
     $(".whitemenu").css("background" , "white");
-    $(".container-calendar").removeClass("showCalendar");
+    
 
 
 
@@ -741,6 +768,7 @@ $(document).click(function (event) {
 
 //click on small-size-header
   $(".small-size-header").click(function () {
+  $(".whiteoverlay").css("display" , "block");  
   $(".mobile-top-menu").css("display", "block");
   $(".small-size-header").css("display", "none");
   $(".small-size-footer").css("display", "block");
@@ -751,6 +779,7 @@ $(document).click(function (event) {
   $(".mobile-size-button").click(function () {
   $(".small-size-header").css("display", "flex");
   $(".mobile-top-menu").css("display", "none");
+  $(".whiteoverlay").css("display" , "none");
 
 })
 
@@ -804,9 +833,21 @@ $(".exp-date").on({
 
 //-------------------------------------------------------------------
 //This code is added for the hover effect of the search button which needs the position of mouse in Y and X axis
-let shiny = document.querySelector(".shiny")
-searchButton.addEventListener("mousemove", (e) => {
-  const { x, y } = searchButton.getBoundingClientRect();
-  shiny.style.setProperty("--x", e.clientX - x);
-  shiny.style.setProperty("--y", e.clientY - y);
-});
+let shiny = document.querySelectorAll(".shiny")
+searchButton.forEach((item) => {
+  item.addEventListener("mousemove", (e) => {
+    const { x, y } = item.getBoundingClientRect();
+    shiny.forEach((element) => {
+      element.style.setProperty("--x", e.clientX - x);
+      element.style.setProperty("--y", e.clientY - y);
+    })
+  
+  })
+})
+
+// let searchdate = document.querySelector(".search-date")
+// searchdate.addEventListener("mousemove", (e) => {
+//   const { x, y } = searchdate.getBoundingClientRect();
+//   shiny.style.setProperty("--x", e.clientX - x);
+//   shiny.style.setProperty("--y", e.clientY - y);
+// });

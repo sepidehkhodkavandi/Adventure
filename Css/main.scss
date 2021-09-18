@@ -148,6 +148,17 @@ $xxxsmallDevice :375px;
   inset: 0px !important;
   position: fixed !important;
 }
+
+.whiteoverlay{
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  background-size: cover;
+  inset: 0px !important;
+  position: fixed !important;
+  z-index: 100;
+}
   
 .hero {
   width: 100%;
@@ -472,6 +483,10 @@ input:focus{
   display: none;
 }
 
+.tabwrapper{
+  width: 100%;
+}
+
 .places:hover:before {
   transform: scaleX(0.25);
   display: block;}
@@ -506,8 +521,10 @@ input:focus{
   .wmweek{
     width: 200px;
     white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: regular;
+    font-size: 14px;
 }
 }
 .places::before {
@@ -670,7 +687,7 @@ input:focus{
   position: absolute;
   left: 0px;
   top: 100%;
-  z-index: 1;
+  z-index: 1001;
   background: #FFFFFF;
   border-radius: 32px;
   box-shadow: 0px 6px 20px rgba(0, 0, 0,  0.2) !important;
@@ -1115,6 +1132,9 @@ input:focus{
 .search-button:hover .shiny{
   opacity: 1 !important;
 }
+#srch:hover .shiny{
+  opacity: 1 !important;
+}
 
 .search-button {
   padding-right: 9px;
@@ -1133,14 +1153,26 @@ input:focus{
 
 }
 
-.searchBtnActive {
+#smallsearch{
+  padding-right: 9px;
+  transition: 0.2s opacity cubic-bezier(0.35, 0, 0.65, 1);
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 24px;
   position: absolute;
   right: 5px;
-  display: flex;
+  top:5px;
+  //display: flex;
   height: 32px;
   width: 32px;
   justify-content: center;
+  max-width: 48px;
+  z-index: 0;
+  background: rgb(255, 56, 92);
 }
+
 
 .search-button::before {
   background: -webkit-linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
@@ -1713,8 +1745,13 @@ input:focus{
   overflow: hidden auto ;
   padding: 16px 32px ;
   display: none;
+  font-family: regular;
+  button{
+    font-size: 14px;
+  }
  
 }
+
 .flexActive{
   display: flex;
   flex-direction: column;
@@ -1762,7 +1799,7 @@ input:focus{
   margin: 0px ;
   span{
     display: inline ;
-    font-weight: 800 ;
+    font-family: boldfont;
     color: rgb(34, 34, 34) ;
   }
 }
@@ -1775,8 +1812,8 @@ input:focus{
   padding-top: 8px ;
   padding-bottom: 16px ;
   span{
-    font-weight: 800 !important;
     color: rgb(34, 34, 34) !important;
+    font-family: boldfont;
   }
 }
 .fc-d3{
