@@ -118,6 +118,11 @@ $xxxsmallDevice :375px;
     @content;
   }
 }
+@mixin extraLdevice {
+  @media (min-width:1850px) {
+    @content
+  }
+}
 
 // ------hero section------
 //$alaki:550px;
@@ -1237,9 +1242,14 @@ input:focus{
 // -------------------------------start main one sepideh
 .main {
 
-  margin: 0;
+  margin-right:auto;
+  margin-left: auto;
   padding: 0;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .nearby {
@@ -1872,9 +1882,11 @@ input:focus{
 /*Live anywhere- Helia**/
 
 .main-two-2 {
-
   margin-top: 40px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include mediumDevice(){
     margin-top: 20px;
   }
@@ -2016,12 +2028,19 @@ input:focus{
   margin-top: 40px;
   width: 100%;
   font-family: regular;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 
   .m-2-3-container {
     padding-right: 80px;
     padding-left: 80px;
     max-width: 1760px;
     height: 482px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  
     cursor: pointer !important;
    @include largeDevice(){
      height: 362px;
@@ -2034,7 +2053,10 @@ input:focus{
      padding-right: 24px;
    }
 
-
+   @include extraLdevice(){
+     min-width: 1740px;
+     //height: 500px;
+   }
   }
 
 
@@ -2048,6 +2070,9 @@ input:focus{
   background-size: cover;
   height:100%;
   border-radius: 15px;
+  @include extraLdevice(){
+    background-position: center center;
+  }
   @include largeDevice(){
     background-image: url(../Images/tryHosting-large.jpg);
   }
@@ -2136,6 +2161,9 @@ input:focus{
   margin-bottom: 30px;
   margin-top: 60px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
 .discover-pics::-webkit-scrollbar{
   display: none !important;
@@ -2530,11 +2558,7 @@ footer svg {
   display: none;
   width: 850px;
   position: relative !important;
-  // align-items: center;
-  //justify-content: center;
-  // overflow: auto hidden;
- 
-  height: 600px;
+  height: 500px;
   z-index: 5;
   margin-top: 22px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0% ;
@@ -2578,7 +2602,7 @@ footer svg {
 
     .bgw {
       background-color: white !important;
-      z-index: 2;
+      
     }
 
   }
@@ -2594,7 +2618,7 @@ footer svg {
    
     cursor: pointer ;
     text-align: center ;
-    border: 1px solid rgb(235, 235, 235);
+    border: 3px solid rgb(235, 235, 235);
     outline: none ;
     margin: 5px ;
     border-radius: 30px ;
@@ -2654,7 +2678,7 @@ footer svg {
   // display: block !important;
    position: absolute !important;
    top: 50% !important;
-   left: 70% !important;
+   left: 65% !important;
    transform: translate(-50%, -50%) !important;
    width: 24px !important;
    height: 24px !important;

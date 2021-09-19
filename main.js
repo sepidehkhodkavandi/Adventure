@@ -1,5 +1,6 @@
 
 const containerCalendar = document.querySelector(".container-calendar");
+
 //experinces tab - Helia
 const exp = document.querySelector('.exp');
 const places = document.querySelector('.places');
@@ -10,10 +11,15 @@ exp.addEventListener('click', function(){
   $(".location-container").addClass("changeflex");
   exp.classList.add("scale");
   places.classList.add("pscale");
+  if (containerCalendar.style.display == "felx"){
+  document.querySelector('.container-calendar').classList.add('dni');
+
+  }
 });
 
 // places tab 
 places.addEventListener('click', function(){
+  document.querySelector(".selection").style.display = "flex";
   document.querySelector(".checkBigContainer").style.display= "flex";
   document.querySelector(".exp-date").style.display="none";
   $(".location-container").removeClass("changeflex");
@@ -21,11 +27,18 @@ places.addEventListener('click', function(){
   exp.classList.remove("scale");
   places.classList.remove("pscale");
   places.classList.add("scale");
+  document.querySelector('.container-calendar').classList.add('dni');
+
 });
-// const expDateBtn = document.querySelector('.exp-date');
-//   expDate.addEventListener('click', function(){
-//   document.querySelector('.container-calendar').classList.toggle('showCalendar');
-// }); 
+ $("html").click(function (event){
+        if (!$(event.target).closest($('.container-calendar')).length &&
+            !$(event.target).closest($('.checkBigContainer')).length &&
+            !$(event.target).closest($('.exp-date')).length) {
+            document.querySelector('.container-calendar').classList.add('dni');
+        }  
+
+      
+   });
 
 
 
@@ -98,7 +111,7 @@ function scrollFunction() {
     let whead = document.querySelector('#whead');
     let CC = document.querySelector(".container-calendar");
     $("html").click(function (event){
-       if (!$(event.target).closest(whead).length){
+       if (!$(event.target).closest(whead).length && !$(event.target).closest(containerCalendar).length ){
         document.querySelector('.overlay').style.display = "none";
         document.querySelector('.whitemenu').classList.add('whiteActive');
         document.querySelector('.center').style.display ="none";
@@ -108,15 +121,11 @@ function scrollFunction() {
         document.querySelector('.centerheader').classList.add("centerScroll");
         document.querySelector('.guest-container').classList.add('removeHover');
         document.querySelector('.headermenu').classList.remove('headerScroll');
+        document.querySelector('.container-calendar').classList.add('dni');
        }
       })
 
-      // $("html").click(function (event){
-      //   if (!$(event.target).closest($(".container-calendar").length)){
-      //   document.querySelector('.container-calendar').classList.add('dni');
-
-      //   }
-      // })
+    
 
      
 
@@ -137,34 +146,33 @@ function scrollFunction() {
   } 
   
     else  {
-
-    header.style.backgroundColor = "unset" ;
-    document.querySelector('.overlay').classList.add('dni');
-    header.classList.remove('active');
-    document.querySelector(".host").style.color = "#fff";
-    document.querySelectorAll('.svgLogo').forEach(function (e) {
+      document.querySelector('.container-calendar').classList.add('dni');
+      header.style.backgroundColor = "unset" ;
+      document.querySelector('.overlay').classList.add('dni');
+      header.classList.remove('active');
+      document.querySelector(".host").style.color = "#fff";
+      document.querySelectorAll('.svgLogo').forEach(function (e) {
       e.setAttribute("fill", "#fff");
-     });
-    document.querySelector('.lanlogo').style.fill = "#fff";
-    header.style.boxShadow = 'unset';
-    document.querySelector('.whitemenu').classList.remove('whiteActive');
-    document.querySelector('.guest-container').classList.remove('removeHover');
-
-    document.querySelector('.center').style.display ="flex";
-    document.querySelector(".tabwrapper").style.display ="flex";
-    document.querySelector("#smallsearch").style.display ="none";
-
-
-    document.querySelector('.whitemenuText').style.display="none";
-    document.querySelectorAll('.clink').forEach(function(link) {
-      link.classList.remove("clinkBlack");
         });
-    document.querySelector('.places').classList.remove('placesBlack');
-    document.querySelector('.exp').classList.remove('expBlack');
-    document.querySelector('.onlineexp').classList.remove('onlineexpBlack');
-    document.querySelector('.centerheader').classList.remove("centerScroll");
-    document.querySelector('.host').classList.remove("rmenuScrollHover");
-    document.querySelector(".language").classList.remove("rmenuScrollHover");
+      document.querySelector('.lanlogo').style.fill = "#fff";
+      header.style.boxShadow = 'unset';
+      document.querySelector('.whitemenu').classList.remove('whiteActive');
+      document.querySelector('.guest-container').classList.remove('removeHover');
+      document.querySelector('.center').style.display ="flex";
+      document.querySelector(".tabwrapper").style.display ="flex";
+      document.querySelector("#smallsearch").style.display ="none";
+
+
+document.querySelector('.whitemenuText').style.display="none";
+document.querySelectorAll('.clink').forEach(function(link) {
+  link.classList.remove("clinkBlack");
+    });
+document.querySelector('.places').classList.remove('placesBlack');
+document.querySelector('.exp').classList.remove('expBlack');
+document.querySelector('.onlineexp').classList.remove('onlineexpBlack');
+document.querySelector('.centerheader').classList.remove("centerScroll");
+document.querySelector('.host').classList.remove("rmenuScrollHover");
+document.querySelector(".language").classList.remove("rmenuScrollHover");
   }
 }
 
@@ -337,15 +345,44 @@ const calenderF = function () {
 checkIn.addEventListener('click', function () {
   this.classList.add('sh-btn')
   checkOut.classList.remove('sh-btn')
+  if(document.querySelector(".selection").style.display == "none"){
+     document.querySelector(".selection").style.display == "flex";
+  }
+  $('.location-input-menu').css("display","none");
+  $('.guest-menu').css("display","none");
+  $(".location-container").removeClass("clickeffect");
+  $(".guest-container").removeClass("clickeffect");
+  $(".container-calendar").css('display','flex')
   calenderF()
 })
 
 checkOut.addEventListener('click', function () {
   this.classList.add('sh-btn')
-
+  $('.location-input-menu').css("display","none");
+  $('.guest-menu').css("display","none");
   checkIn.classList.remove('sh-btn')
+  $(".location-container").removeClass("clickeffect");
+  $(".guest-container").removeClass("clickeffect");
   calenderF()
 })
+
+//------------------------------------Samira Calendar experiense-----------
+$('.exp-dateContainer').on('click', function () {
+
+  $('.container-calendar').removeClass('dni');
+  $('.selection').css('display', 'none');
+  $('.btn-days').css('display', 'none');
+  $('.container-calendar').addClass('flexCalHeight');
+  $('.container-calendar').css('margin-top', '10px');
+  $('.container-calendar').css('width', '790px');
+  $('.location-input-menu').css("display" , "none");
+  
+
+  calenderF();
+})
+//------------------------------------Samira Calendar experiense-----------
+
+
 
 
 
@@ -414,8 +451,8 @@ $(".click-calendar")
       $(".close2").css("display", "none");
       $("#circle").css("display", "none");
       $('.add-dates').text('Add dates');
-      $(".check-out-container").removeClass(".bgw");
-      $(".check-in-container").addClass(".bgw");
+      $(".check-out-container").removeClass("bgw");
+      $(".check-in-container").addClass("bgw");
       $(".addDatumOut").css("color", "#222222");
       $(".addDatumOut").css("font-weight", "300");
       $(".addDatumIn").css("color", "color: #222222");
@@ -672,6 +709,12 @@ $(".guest").click(function () {
 
 //click on guest-add-date 
 $(".guest").click(function () {
+  checkIn.classList.remove('sh-btn')
+        checkOut.classList.remove('sh-btn')
+        $('#flexx').removeClass("clickeffect");
+        $('location-container').removeClass("clickeffect");
+        $('guest-container').removeClass("clickeffect");
+        $('guest').removeClass("clickeffect");
   if (guestMenu.style.display == "block") {
     guestMenu.style.display = "none";
     $(".whitemenu").css("background" , "white");
@@ -693,6 +736,8 @@ $(".guest").click(function () {
       $(".check-out-container").removeClass("clickeffect");
       $(".check-in-container").removeClass("clickeffect");
       $('#flexx').removeClass("clickeffect");
+      checkOut.classList.remove('sh-btn')
+
     }
 
     if ($(".add-dates-s").text() != "Add guests") {
@@ -723,6 +768,14 @@ $(".circle-close").click(function () {
 
 //click on location input
 $(".location").click(function () {
+
+  checkIn.classList.remove('sh-btn')
+        checkIn.classList.remove('sh-btn')
+        checkOut.classList.remove('sh-btn')
+        $('#flexx').removeClass("clickeffect");
+        $('location-container').removeClass("clickeffect");
+        $('guest-container').removeClass("clickeffect");
+        $('guest').removeClass("clickeffect");
   if (locationMenu.style.display == "block") {
     locationMenu.style.display = "none";
     $(".whitemenu").css("background" , "white");
@@ -737,7 +790,8 @@ $(".location").click(function () {
     $(".search-button").addClass("searchclass");
     $(".search-button").addClass("exapnded-search");
     $(".search-button").addClass("increaseWidth");
-    $(".searchAppear").css("display", "block");
+    $(".searchAppear").css("display", "block"); 
+
 
     }
     $(".location-container").addClass("clickeffect");
@@ -745,9 +799,7 @@ $(".location").click(function () {
         profilemenu.style.display = "none";
         guestMenu.style.display = "none";
         $(".container-calendar").addClass("dni");
-        $(".check-out-container").removeClass("clickeffect");
-        $(".check-in-container").removeClass("clickeffect");
-        $('#flexx').removeClass("clickeffect");
+        
      
     }
 
@@ -755,6 +807,15 @@ $(".location").click(function () {
 });
 //click on sign-in button- top right menu
 $(".sign-in-button").click(function () {
+        checkIn.classList.remove('sh-btn')
+        checkOut.classList.remove('sh-btn')
+        $('#flexx').removeClass("clickeffect");
+        $('location-container').removeClass("clickeffect");
+        $('guest-container').removeClass("clickeffect");
+        $('guest').removeClass("clickeffect");
+
+
+
   if (profilemenu.style.display == "block") {
     profilemenu.style.display = "none";
 
@@ -797,18 +858,14 @@ $(".search-button").click(function () {
 
 });
 
-// $(document).click(function (event) {
-//   if (!$(event.target).closest(containercalendar).length &&
-//       !$(event.target).closest(whiteMenu).length){
-//         $(".container-calendar").removeClass("showCalendar");
-//       }
-// })
-
 
 //click on anywhere in the document except the ones mentioned in the if condition
 
 
 $(document).click(function (event) {
+
+  
+
   if (!$(event.target).closest(signInButton).length &&
     !$(event.target).closest(profilemenu).length &&
     !$(event.target).closest(locationMenu).length &&
@@ -842,6 +899,11 @@ $(document).click(function (event) {
     //checkOut.classList.remove("clickeffect");
     //checkIn.classList.remove("clickeffect");
     $(".whitemenu").css("background" , "white");
+    //this.classList.add('sh-btn')
+    $(".check-out-container").removeClass("sh-btn");
+  $('location-container').css ("displaay" , "none");
+  $(".location-container").removeClass("clickeffect");
+  $(".guest-container").removeClass("clickeffect");
     
 
 
@@ -928,9 +990,3 @@ searchButton.forEach((item) => {
   })
 })
 
-// let searchdate = document.querySelector(".search-date")
-// searchdate.addEventListener("mousemove", (e) => {
-//   const { x, y } = searchdate.getBoundingClientRect();
-//   shiny.style.setProperty("--x", e.clientX - x);
-//   shiny.style.setProperty("--y", e.clientY - y);
-// });
