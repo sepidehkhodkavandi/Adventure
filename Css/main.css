@@ -1974,9 +1974,15 @@ input:focus {
   margin-top: 40px;
   width: 100%;
   font-family: regular;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+@media (min-width: 1850px) {
+  .main-two-3 {
+    min-width: 1740px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .main-two-3 .m-2-3-container {
@@ -1984,9 +1990,6 @@ input:focus {
   padding-left: 80px;
   max-width: 1760px;
   height: 482px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer !important;
 }
 
@@ -2009,6 +2012,9 @@ input:focus {
 @media (min-width: 1850px) {
   .main-two-3 .m-2-3-container {
     min-width: 1740px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -2052,6 +2058,7 @@ input:focus {
   flex-direction: column;
   padding-top: 130px;
   max-width: 544px;
+  font-family: bookAirbnb;
 }
 
 @media (max-width: 1127px) {
@@ -2063,7 +2070,7 @@ input:focus {
 
 @media (max-width: 743px) {
   .m-2-3-text {
-    padding: 32px 32px;
+    padding: 20px 20px;
     max-width: 100%;
     align-items: center;
     text-align: center;
@@ -2085,6 +2092,12 @@ input:focus {
   }
 }
 
+@media (max-width: 743px) {
+  .m-2-3-text h1 {
+    font-size: 20px !important;
+  }
+}
+
 .m-2-3-text p {
   padding-top: 12px;
   font-size: 18px;
@@ -2102,6 +2115,8 @@ input:focus {
 @media (max-width: 743px) {
   .m-2-3-text p {
     max-width: 433px;
+    font-size: 14px !important;
+    padding-top: 0px !important;
   }
 }
 
@@ -2130,7 +2145,7 @@ input:focus {
 
 @media (max-width: 743px) {
   .m-2-3-text .lm {
-    margin-top: 18px;
+    margin-top: 10px;
   }
 }
 
@@ -2299,10 +2314,22 @@ input:focus {
   font-size: 0.875;
 }
 
+@media (max-width: 743px) {
+  .container__inspiration {
+    padding: 0px 24px;
+  }
+}
+
 .container__inspiration h1 {
   padding: 1.1em 0;
   font-weight: 700;
   font-family: boldfont;
+}
+
+@media (max-width: 743px) {
+  .container__inspiration h1 {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 1127px) {
@@ -2414,6 +2441,7 @@ input:focus {
 @media (max-width: 743px) {
   .footer-main .footer__links {
     flex-wrap: wrap;
+    padding: 0px 24px;
   }
 }
 
@@ -2659,7 +2687,7 @@ footer svg {
   content: "" !important;
   position: absolute !important;
   top: 50% !important;
-  left: 65% !important;
+  left: 68% !important;
   transform: translate(-50%, -50%) !important;
   width: 24px !important;
   height: 24px !important;
